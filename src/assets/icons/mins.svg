@@ -1,0 +1,10 @@
+<svg width="24" height="10" viewBox="0 0 24 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_d_2523_14021)">
+<path d="M5.125 1H18.875" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<filter id="filter0_d_2523_14021" x="0.375" y="0.25" width="23.25" height="9.5" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2523_14021" result="shape"/>
+</filter>
+</defs>
+</svg>

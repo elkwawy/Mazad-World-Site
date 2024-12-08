@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --main-color: #1B6392;
+  --sec-color : #fa8232;
+
+  --hover-main-color: #51a8ff;
+  --frist-color: #3995ff;
+  --thrid-color: #449eff;
+  --secound-color: #5db2ff;
+  --color-black: #222222;
+  --color-white: #ffffff;
+}
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito Sans", sans-serif;
+  overflow-x: hidden;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--sec-color);
+}
+::-webkit-scrollbar-track {
+  background-color: lightgray;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+*:focus {
+  outline: none;
+}
+.trans {
+  transition: all;
+  transition-duration: 0.3s;
+}
+
+.myAK {
+  margin: 60px 0;
+}
+/* My Container */
+.containerAK {
+  margin: 0 auto;
+}
+@media (max-width: 576px) {
+  .containerAK {
+    width: 90%;
+  }
+}
+@media (min-width: 576px) {
+  .containerAK {
+    width: 85%;
+  }
+}
+@media (min-width: 768px) {
+  .containerAK {
+    width: 85%;
+  }
+}
+@media (min-width: 992px) {
+  .containerAK {
+    width: 80%;
+  }
+}
+@media (min-width: 1200px) {
+  .containerAK {
+    width: 70%;
+  }
+}
+@media (min-width: 1400px) {
+  .containerAK {
+    width: 70%;
+  }
+}
