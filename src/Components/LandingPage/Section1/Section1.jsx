@@ -1,4 +1,4 @@
-import Newswiper from "./Newswiper.jsx";
+import Newswiper from "./NewSwiper";
 import airbus from "../../../assets/Imgs/airbus.png";
 import pixel6Pro from "../../../assets/Imgs/pixel6Pro.png";
 
