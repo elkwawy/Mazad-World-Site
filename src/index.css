@@ -2,13 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 :root {
-  --main-color: #1B6392;
-  --sec-color : #fa8232;
+  --main-color: #31111D;
+  --bMC: #5a2337;
 
-  --hover-main-color: #51a8ff;
+  --sec-color : #BE4646;
+
+  --hover-main-color: #411b29;
+
+
+
   --frist-color: #3995ff;
-  --thrid-color: #449eff;
   --secound-color: #5db2ff;
+  --thrid-color: #449eff;
   --color-black: #222222;
   --color-white: #ffffff;
 }
@@ -77,11 +82,11 @@ a {
 }
 @media (min-width: 1200px) {
   .containerAK {
-    width: 70%;
+    width: 80%;
   }
 }
 @media (min-width: 1400px) {
   .containerAK {
-    width: 70%;
+    width: 86%;
   }
 }

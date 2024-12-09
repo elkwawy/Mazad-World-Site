@@ -13,10 +13,10 @@ import hedset from "../../assets/icons/Vector.svg";
 const HeaderMiddleBar = ({ toggleDrawer, isOpen }) => {
   return (
     <>
-      <div className="bg-[#1B6392] h-[88px] flex justify-center items-center">
+      <div className="bg-main-color h-[88px] flex justify-center items-center">
         <div className="flex justify-between items-center gap-6 containerAK">
           <Link to="/">
-            <img src={logo} className="w-[177px] h-[48px]" alt="Logo" />
+          <h2 className="text-2xl font-bold text-white">MAZAD WORLD</h2>
           </Link>
           <div className="w-[546px] h-[48px] flex space-x-2 items-center justify-center max-sm:hidden">
             <input

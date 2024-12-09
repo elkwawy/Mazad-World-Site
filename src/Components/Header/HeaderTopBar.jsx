@@ -6,11 +6,11 @@ import Twitter from "../../assets/icons/Twitter.svg";
 
 const HeaderTopBar = () => {
   return (
-    <div className="bg-[#1B6392] border-b border-b-[#427ea6]">
+    <div className="bg-main-color border-b border-bMC">
       <div className="containerAK gap-1  py-2.5  flex items-center justify-between text-center text-white text-xs max-sm:gap-y-1 max-sm:flex-col max-sm:justify-center">
         <div className="flex items-center  max-sm:justify-center">
           <div className="flex justify-center items-center h-[20px] w-[258px]">
-            <span>Welcome to Clicon online eCommerce store.</span>
+            <span>Welcome to MazadWorld Auction platform.</span>
           </div>
         </div>
         <div className="flex items-center max-sm:justify-center gap-3">

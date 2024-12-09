@@ -58,8 +58,8 @@ export default function NewSwiper() {
             {/* Text Section */}
             <div className="flex flex-col justify-center mb-10 px-3 max-sm:order-2">
               <div className="flex items-center space-x-2">
-                <div className="w-4 max-md:w-2 border-t-2 border-t-[#2da5f3]" />
-                <p className="text-sm font-semibold text-[#2484c2]">
+                <div className="w-4 max-md:w-2 border-t-2 border-sec-color" />
+                <p className="text-sm font-semibold text-sec-color">
                   {slide.subtitle}
                 </p>
               </div>
@@ -70,7 +70,7 @@ export default function NewSwiper() {
                 {slide.description}
               </p>
               <button className="bg-sec-color text-base font-bold uppercase text-white w-[191px] h-14 mt-6 rounded-md flex items-center justify-center gap-3.5">
-                SHOP NOW
+                At Auction
                 <FaArrowRight className="w-5 h-5" />
               </button>
             </div>
@@ -83,7 +83,7 @@ export default function NewSwiper() {
                 className="h-[408px] w-[368px] object-contain"
               />
               <div className="absolute top-[0Px] right-[0px]">
-                <div className="bg-[#2da5f3] text-[22px] font-semibold text-white h-[108px] w-[108px] flex items-center justify-center rounded-full border-4 border-white">
+                <div className="bg-sec-color text-[22px] font-semibold text-white h-[108px] w-[108px] flex items-center justify-center rounded-full border-4 border-white">
                   {slide.price}
                 </div>
               </div>

@@ -15,16 +15,16 @@ function Section1() {
           <div className="bg-[#191c1f] box-border overflow-hidden h-[232px] max-lg:p-2   flex justify-start items-stretch flex-col w-[100.00%] pt-6 rounded-md max-lg:pt-2">
             <div className="flex justify-between  items-start flex-row gap-2 grow-0 shrink-0 basis-auto pl-[30px] max-lg:pl-1 max-xl:pl-1 pr-5  ">
               <div className="max-w-[162px] mx-3 mt-6  z-50 max-sm:text-lg grow-0 shrink-0 basis-auto box-border pt-[22px]">
-                <p className="[font-family:'Public_Sans',sans-serif] text-sm font-medium uppercase text-[#ebc80c] m-0 p-0">
+                <p className="[font-family:'Public_Sans',sans-serif] text-sm font-medium uppercase text-sec-color m-0 p-0">
                   Summer Sales
                 </p>
                 <p className="[font-family:'Public_Sans',sans-serif] text-2xl font-semibold text-left leading-8 text-[white] w-[100.00%] max-lg:text-lg box-border mt-[5px] max-sm:text-sm max-sm:w-[100px]">
                   New Google Pixel 6 Pro
                 </p>
               </div>
-              <div className=" flex relative  justify-center items-center max-lg:mt-2 bg-[#efd33d] [font-family:'Public_Sans',sans-serif] text-base font-semibold text-[#141414] -mt-4 min-w-[102px] h-10 w-[102px] cursor-pointer  box-border ">
+              {/*        <div className=" flex relative  justify-center items-center max-lg:mt-2 bg-[#efd33d] [font-family:'Public_Sans',sans-serif] text-base font-semibold text-[#141414] -mt-4 min-w-[102px] h-10 w-[102px] cursor-pointer  box-border ">
                 29% OFF
-              </div>
+              </div>*/}
             </div>
             <div className="mt-[-88px] self-end grow-0 shrink-0 basis-auto max-lg:pt-4  ">
               <img
@@ -34,8 +34,8 @@ function Section1() {
             </div>
             <div className="mt-[-95px] grow-0 shrink-0 max-xl:-ml-6 max-lg:-ml-0 mx-2 basis-auto lg:pl-10  ">
               {/* Button Component starts here. We've generated code using MUI Base. See other options in "Component library" dropdown in Settings */}
-              <button className="bg-[#fa8232] [font-family:'Public_Sans',sans-serif] text-sm font-bold uppercase text-[white] h-12 min-w-[120px]  cursor-pointer inline-flex items-center justify-center gap-[9px] box-border rounded-sm border-[none]">
-                Shop Now
+              <button className="bg-sec-color [font-family:'Public_Sans',sans-serif] text-sm font-bold uppercase text-[white] h-12 min-w-[120px]  cursor-pointer inline-flex items-center justify-center gap-[9px] box-border rounded-sm border-[none]">
+                At Auction
                 <FaArrowRight className="w-5 h-5" />
               </button>
             </div>
@@ -47,12 +47,12 @@ function Section1() {
               <p className="[font-family:'Public_Sans',sans-serif] text-2xl font-semibold text-left leading-8 text-[#191c1f] w-[100.00%] box-border m-0 p-0">
                 Xiaomi FlipBuds Pro
               </p>
-              <p className="[font-family:'Public_Sans',sans-serif] text-lg font-semibold text-[#2da5f3] mt-3 m-0 p-0">
+              <p className="[font-family:'Public_Sans',sans-serif] text-lg font-semibold text-sec-color mt-3 m-0 p-0">
                 $299 USD
               </p>
               {/* Button Component starts here. We've generated code using MUI Base. See other options in "Component library" dropdown in Settings */}
-              <button className="bg-[#fa8232] [font-family:'Public_Sans',sans-serif] text-sm font-bold tracking-[0.17px] uppercase text-[white]  h-12 min-w-[130px]    inline-flex items-center justify-center   box-border mt-5 rounded-sm border-[none]">
-                Shop Now
+              <button className="bg-sec-color [font-family:'Public_Sans',sans-serif] text-sm font-bold tracking-[0.17px] uppercase text-[white]  h-12 min-w-[130px]    inline-flex items-center justify-center   box-border mt-5 rounded-sm border-[none]">
+                At Auction
                 <FaArrowRight className="w-5 h-5 ml-2" />
               </button>
             </div>

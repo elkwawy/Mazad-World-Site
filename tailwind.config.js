@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         "main-color": "var(--main-color)",
+        "bMC": "var(--bMC)",
         "sec-color": "var(--sec-color)",
       },
     },

@@ -31,10 +31,10 @@ const HeaderBottomBar = () => {
         </div>
       </div>
       <div className="flex items-center max-lg:hidden">
-        <a href="tel:+1-202-555-0104">
-          <img src={hedset} alt="Phone" />
+        <a href="tel:+20-123456789">
+          <img src={hedset} alt="Phone" className=" mr-2" />
         </a>
-        +1-202-555-0104
+        +20-123456789
       </div>
     </div>
   );

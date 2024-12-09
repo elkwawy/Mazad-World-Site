@@ -35,19 +35,14 @@ const CategoryMenu = () => {
         />
       </button>
       {isMenuOpen && (
-        <div className="absolute left-0 top-full bg-white shadow-lg p-3 text-sm h-[420px] w-[240px] max-sm:w-[200px] max-sm:border max-sm:rounded border-gray-100  max-sm:pt-2">
+        <div className="absolute left-0 top-full bg-white shadow-lg p-3 text-sm h-[235px] w-[240px] max-sm:w-[200px] max-sm:border max-sm:rounded border-gray-100  max-sm:pt-2">
           <ul className="cursor-pointer">
-            <button className="p-2">Computer & Laptop</button>
-            <li className="p-2">Computer Accessories</li>
-            <li className="p-2">SmartPhone</li>
-            <li className="p-2">Headphone</li>
-            <li className="p-2">Mobile Accessories</li>
-            <li className="p-2">Gaming Console</li>
-            <li className="p-2">Camera & Photo</li>
-            <li className="p-2">TV & Home Appliances</li>
-            <li className="p-2">Watches & Accessories</li>
-            <li className="p-2">GPS & Navigation</li>
-            <li className="p-2">Wearable Technology</li>
+            <button className="p-2">Varieties</button>
+            <li className="p-2">Real estate</li>
+            <li className="p-2">Electronics</li>
+            <li className="p-2">Cars</li>
+            <li className="p-2">Jewelry</li>
+            <li className="p-2">Antiques</li>
           </ul>
         </div>
       )}
