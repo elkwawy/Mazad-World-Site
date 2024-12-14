@@ -9,7 +9,6 @@ import ResetPassword from "./Auth/ResetPassword";
 import ForgetPassword from "./Auth/ForgetPassword";
 import EmailVerification from "./Auth/EmailVerification";
 import NotFound from "./Pages/NotFound";
-
 function App() {
   return (
     <div className="App">

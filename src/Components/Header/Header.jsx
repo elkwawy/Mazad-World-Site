@@ -13,7 +13,6 @@ function Header() {
 
   return (
     <>
-      <HeaderTopBar />
       <HeaderMiddleBar isOpen={isOpen} toggleDrawer={toggleDrawer} />
       <HeaderBottomBar />
     </>
