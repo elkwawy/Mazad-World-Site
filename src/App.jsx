@@ -2,7 +2,7 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import LandingPage from "./Pages/LandingPage";
 import Footer from "./Components/Footer";
-import Header from "./Components/Header/Header";
+import Navbar from "./Components/Navbar";
 import SignUp from "./Auth/SignUp";
 import Login from "./Auth/Login";
 import ResetPassword from "./Auth/ResetPassword";
@@ -12,7 +12,7 @@ import NotFound from "./Pages/NotFound";
 function App() {
   return (
     <div className="App">
-      <Header />
+      <Navbar />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/signup" element={<SignUp />} />

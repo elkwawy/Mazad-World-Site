@@ -1,108 +1,111 @@
-import logo1 from "../assets/Logo1.png";
-import ArrowRight from "../assets/icons/ArrowRight.png";
-
+import { FiMail, FiPhone} from "react-icons/fi";
 function Footer() {
   return (
-    <footer className="">
-      <div className="bg-[#191C1F]">
-        <div className="flex text-white justify-center pt-[72px] sm:px-56 mb-10 ">
-          <div className="grid  grid-cols-[312px_200px_200px_312px]  max-sm:grid-cols-1 max-sm:p-0 max-xl:grid-cols-[300px_300px_260px]  max-lg:grid-cols-[230px_230px_180px] max-xl:gap-9  max-xl:pl-8 max-xl: gap-4">
-            <div className="px-5 mb-3 w-[312px]">
-              <div className="  h-[72px] w-full ">
-                <h2 className="text-2xl font-bold">MAZAD WORLD</h2>
+    <footer className="bg-[#191c1f]">
+      <div className="containerAK mx-auto px-4 py-12 text-gray-300">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-gray-300">
+          <div>
+            <h3 className="text-xl font-bold text-white mb-4">MAZAD WORLD</h3>
+            <p className="text-sm mb-4">
+              64 East Washington Street
+              <br />
+              El_Mansura, NY 10005
+            </p>
+            <div className="space-y-2">
+              <div className="flex items-center">
+                <FiPhone className="mr-2" />
+                <span>+20 123 456 789</span>
               </div>
-              <div className=" ph-[48px]">
-                <h2 className="text-xs text-[#77878F]">Customer Supports:</h2>
-                <h1 className="text-lg font-medium">(629) 555-0129 </h1>
-              </div>
-              <div className="text-base leading-6	 text-[#77878F] h-[48px] w-[248px]">
-                4517 Washington Ave. Manchester, Kentucky 39495
-              </div>
-              <div className="font-medium text-base">mazadWorld@info.com</div>
-            </div>
-            <div className="px-5 mb-3">
-              <div className="font-medium text-base">Top Category</div>
-              <div className=" text-[#929FA5] font-medium gap-2 flex flex-col text-sm pt-[18px]">
-                <div>Varieties</div>
-                <div>Real estate</div>
-                <div>Electronics</div>
-                <div>Cars</div>
-                <div>Jewelry</div>
-                <div>Antiques</div>
-                <div className="flex gap-2 text-[#EBC80C]">
-                  Browse All Product <img src={ArrowRight} />
-                </div>
-              </div>
-            </div>
-            <div className="px-5 mb-3">
-              <div className="font-medium text-base">Quick links</div>
-              <div className=" text-[#929FA5] font-medium gap-2 flex flex-col text-sm pt-[18px]">
-                <div>Shop Product</div>
-                <div>Shoping Cart</div>
-                <div>Wishlist</div>
-                <div>Compare</div>
-                <div>Track Order</div>
-                <div>Customer Help</div>
-                <div>About Us</div>
-              </div>
-            </div>
-
-            <div className="px-5 mb-3 max-lg:col-span-2  max-md:col-span-2 max-sm:col-span-1">
-              <div className="font-medium text-base pb-2">Popular Tag</div>
-              <div className="flex flex-col text-center gap-4">
-                <div className="flex gap-2 font-medium text-sm">
-                  <button className="h-[32px] w-[63px]   bg-gray-800 text-white  hover:bg-gray-700 active:bg-gray-600 transition duration-200 ">
-                    Cars
-                  </button>
-                  <button className="h-[32px]  w-[69px]  bg-gray-800 text-white   hover:bg-gray-700 active:bg-gray-600 transition duration-200 ">
-                  Jewelry
-                  </button>
-                  <button className="h-[32px]  w-[43px] bg-gray-800 text-white  hover:bg-gray-700 active:bg-gray-600 transition duration-200">
-                    SSD
-                  </button>
-                  <button className="h-[32px]  w-[113px] bg-gray-800 text-white  hover:bg-gray-700 active:bg-gray-600 transition duration-200">
-                    Antiques
-                  </button>
-                </div>
-                <div className="flex gap-2 font-medium text-sm">
-                  <button className="h-[32px] w-[85px] bg-gray-800 text-white  hover:bg-gray-700 active:bg-gray-600 transition duration-200">
-                    Macbook
-                  </button>
-                  <button className="h-[32px] w-[53px] bg-gray-800 text-white  hover:bg-gray-700 active:bg-gray-600 transition duration-200">
-                  Tablet
-                  </button>
-                  <button className="h-[32px] w-[117px] bg-gray-800 text-white  hover:bg-gray-700 active:bg-gray-600 transition duration-200">
-                  Real estate
-                  </button>
-                </div>
-                <div className="flex gap-2 font-medium text-sm">
-                  <button className="h-[32px] w-[102px] bg-gray-800 text-white  hover:bg-gray-700 active:bg-gray-600 transition duration-200">
-                    Power Bank
-                  </button>
-                  <button className="h-[32px] w-[87px] bg-gray-800 text-white  hover:bg-gray-700 active:bg-gray-600 transition duration-200">
-                    Smart TV
-                  </button>
-                  <button className="h-[32px] w-[79px] bg-gray-800 text-white  hover:bg-gray-700 active:bg-gray-600 transition duration-200">
-                    Speaker
-                  </button>
-                </div>
-                <div className="flex gap-2 font-medium text-sm">
-                  <button className="h-[32px] w-[66px] bg-gray-800 text-white  hover:bg-gray-700 active:bg-gray-600 transition duration-200">
-                    Tablet
-                  </button>
-                  <button className="h-[32px] w-[95px] bg-gray-800 text-white  hover:bg-gray-700 active:bg-gray-600 transition duration-200">
-                    Microwave
-                  </button>
-                  <button className="h-[32px] w-[86px] bg-gray-800 text-white  hover:bg-gray-700 active:bg-gray-600 transition duration-200">
-                    Samsung
-                  </button>
-                </div>
+              <div className="flex items-center">
+                <FiMail className="mr-2" />
+                <span>mazadWorld@info.com</span>
               </div>
             </div>
           </div>
+
+          <div>
+            <h4 className="text-white font-semibold mb-4">Quick Links</h4>
+            <ul className="space-y-2">
+              <li>
+                <a href="#" className="hover:text-secondary text-gray-300">
+                  Categories
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-secondary text-gray-300">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-secondary text-gray-300">
+                  Contact Us
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-secondary text-gray-300">
+                  Products
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-secondary text-gray-300">
+                  Login
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-white font-semibold mb-4">Top Category</h4>
+            <ul className="space-y-2">
+              <li>
+                <a href="#" className="hover:text-secondary text-gray-300">
+                  Varieties
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-secondary text-gray-300">
+                  Real estate
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-secondary text-gray-300">
+                  Cars
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-secondary text-gray-300">
+                  Jewelry
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-secondary text-gray-300">
+                  Antiques
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-white font-semibold mb-4">Newsletter</h4>
+            <p className="text-sm mb-4">
+              Subscribe to our newsletter for regular updates and exclusive
+              offers.
+            </p>
+            <div className="flex">
+              <input
+                type="email"
+                placeholder="Your email"
+                className="px-4 py-2 rounded-l text-gray-800 w-full"
+              />
+              <button className="bg-secondary px-4 py-2 rounded-r text-white">
+                Subscribe
+              </button>
+            </div>
+          </div>
         </div>
-        <div className="border-t-2 border-gray-700 text-center text-white py-2">
-          All rights reserved to © 2024. Design by DragonTeam
+
+        <div className="border-t border-gray-800 mt-12 pt-8 text-center">
+          <p>&copy; All rights reserved to © 2024. Design by DragonTeam</p>
         </div>
       </div>
     </footer>

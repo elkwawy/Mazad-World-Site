@@ -6,7 +6,7 @@ import { FaArrowRight } from "react-icons/fa6";
 function Section1() {
   return (
     <div className="flex justify-center items-center containerAK pt-4 pb-8">
-      <div className="grid-cols-[872px_424px] max-sm:space-y-6 grid lg:px-14  gap-6  max-xl:grid-cols-[800px] max-xl:gap-4  max-lg:grid-cols-[750px] max-md:px-4 max-md:grid-cols-1 ">
+      <div className="grid-cols-[872px_424px] max-sm:space-y-6 grid  gap-6  max-xl:grid-cols-[800px] max-xl:gap-4  max-lg:grid-cols-[750px] max-md:grid-cols-1 ">
         <div className="flex h-[calc(100%)]  max-sm:mt-6 w-full bg-[#f2f4f5] rounded-md">
           {/*<CardSlider/>*/}
           <Newswiper />

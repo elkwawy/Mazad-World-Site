@@ -8,7 +8,7 @@ function NotFound() {
       <div className="flex flex-col w-[1322px] box-border pt-6 pb-14">
         <img
           src={error}
-          className="h-[280px] max-sm:w-[300px] max-w-[initial] w-[400px] block self-center grow-0 shrink-0 basis-auto box-border"
+          className="h-[330px] max-sm:w-[300px] max-w-[initial] w-[400px] block self-center grow-0 shrink-0 basis-auto box-border"
         />
         <div className="flex justify-start items-stretch flex-col gap-4">
           <p className="[font-family:'Public_Sans',sans-serif] max-sm:text-2xl  text-4xl font-semibold text-center text-[#191c1f] ">

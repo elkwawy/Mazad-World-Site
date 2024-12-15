@@ -1,9 +1,16 @@
+import BestDeals from "../Components/LandingPage/BestDeals";
+import CategoryGrid from "../Components/LandingPage/CategoryGrid";
+import LatestNews from "../Components/LandingPage/LatestNews";
+import MainSection from "../Components/LandingPage/mainSection";
 import Section1 from "../Components/LandingPage/Section1/Section1";
 
 const LandingPage = () => {
   return (
     <div>
-    <Section1 />
+      <MainSection />
+      <BestDeals />
+      <CategoryGrid />
+      <LatestNews />
     </div>
   );
 };
