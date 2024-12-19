@@ -19,7 +19,8 @@ i18n
         translation: German,
       },
     },
-    fallbackLng: "en", // اللغة الافتراضية
+    lng: "en", // اللغة الافتراضية
+    fallbackLng: "en", // اللغة الاحتياطية
     debug: false,
     interpolation: {
       escapeValue: false, // لتجنب مشاكل XSS

@@ -1,48 +1,45 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Cartflot from "./Cart/cartflot";
 import LoginFlot from "../Auth/loginflot";
 import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 import { AiOutlineHeart } from "react-icons/ai";
 import { FiMenu } from "react-icons/fi";
-
+import useLocalization from "../Hooks/useLocalization.js";
 const Navbar = () => {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useLocalization();
+  const [isOpen, setIsOpen] = useState(false);
 
+  // تغيير اللغة وضبط اتجاه الصفحة
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
-    document.documentElement.dir = lng === "ar" ? "rtl" : "ltr";
   };
-    const [isOpen, setIsOpen] = useState(false);
-  
-    const toggleDrawer = () => {
-      setIsOpen(!isOpen);
-    };
-  
+
+  const toggleDrawer = () => {
+    setIsOpen(!isOpen);
+  };
+
   const category = [
-    { name: "Electronics", to: "/electronics" },
-    { name: "Jewelry", to: "/jewelry" },
-    { name: "Cars", to: "/cars" },
-    { name: "Antiques", to: "/antiques" },
-    { name: "Real estate", to: "/real-estate" },
+    { name: t("categories.electronics"), to: "/electronics" },
+    { name: t("categories.jewelry"), to: "/jewelry" },
+    { name: t("categories.cars"), to: "/cars" },
+    { name: t("categories.antiques"), to: "/antiques" },
+    { name: t("categories.realEstate"), to: "/real-estate" },
   ];
+
   return (
     <>
       <div className="bg-main-color h-[88px] flex justify-center items-center">
-        {/* Header Content */}
         <div className="flex justify-between items-center gap-6 max-sm:gap-3 containerAK">
           <Link to="/">
-            <h2 className="text-2xl font-bold text-white">MAZAD_WORLD</h2>
+            <h2 className="text-2xl font-bold text-white">{t("siteName")}</h2>
           </Link>
 
-          {/* Search Input */}
           <input
             className="h-[48px] w-full lg:w-[440px] px-4 rounded max-md:hidden"
             type="search"
-            placeholder="Search..."
+            placeholder={t("searchPlaceholder")}
           />
 
-          {/* Language and Currency Selectors */}
           <div className="flex justify-center text-white items-center gap-2.5">
             <select
               className="bg-transparent"
@@ -50,24 +47,23 @@ const Navbar = () => {
               defaultValue={i18n.language}
             >
               <option className="bg-[#1B6392]" value="en">
-                EG
+                {t("languages.english")}
               </option>
               <option className="bg-[#1B6392]" value="ar">
-                AR
+                {t("languages.arabic")}
               </option>
               <option className="bg-[#1B6392]" value="de">
-                GE
+                {t("languages.german")}
               </option>
             </select>
             <select className="bg-transparent max-md:hidden">
               <option className="bg-[#1B6392]" value="USD">
-                USD
+                {t("currency.usd")}
               </option>
               <option className="bg-[#1B6392]" value="EGP">
-                EGP
+                {t("currency.egp")}
               </option>
             </select>
-            {/* Cart, Wishlist, and Login Buttons */}
             <div className="flex items-center gap-2.5 max-md:hidden">
               <Cartflot />
               <button>
@@ -82,20 +78,30 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      {/* Categories List */}
-      <nav className="shadow max-md:hidden">
-        <div className=" containerAK flex items-center justify-between py-2">
-          <div className="flex items-center justify-between space-x-8">
+
+      <nav className=" shadow  max-md:hidden">
+        <div className="containerAK flex items-center justify-between py-2">
+          <div className="flex items-center justify-between gap-8">
             {category.map((item, index) => (
               <Link key={index} to={item.to} className="hover:text-secondary">
                 {item.name}
               </Link>
             ))}
           </div>
-          <Link to="/contactUs" className="flex items-center text-primary">
-            <span className="text-secondary text-xl">☎</span>
-            <span className="ml-2 font-medium">Contact Us</span>
-          </Link>
+          <div className="flex items-center gap-5">
+            <Link
+              to="/aboutUs"
+              className="flex items-center text-primary font-medium hover:text-secondary transition-colors"
+            >
+              <span className="relative hover:underline">{t("aboutUs")}</span>
+            </Link>
+            <Link
+              to="/contactUs"
+              className="flex items-center text-primary font-medium hover:text-secondary transition-colors"
+            >
+              <span className="relative hover:underline">{t("contactUs")}</span>
+            </Link>
+          </div>
         </div>
       </nav>
 
@@ -118,10 +124,10 @@ const Navbar = () => {
             <LoginFlot />
             <select className="bg-transparent text-white">
               <option className="bg-[#1B6392]" value="USD">
-                USD
+                {t("currency.usd")}
               </option>
               <option className="bg-[#1B6392]" value="EGP">
-                EGP
+                {t("currency.egp")}
               </option>
             </select>
           </div>
@@ -141,10 +147,16 @@ const Navbar = () => {
 
           {/* Contact Us */}
           <Link
+            to="/aboutUs"
+            className="flex items-center -mt-3 text-sm w-full md:w-[200px] h-[40px] bg-[#2A88B9] hover:bg-[#3b95bf] rounded-md px-4 text-white transition-all duration-200"
+          >
+            {t("aboutUs")}
+          </Link>
+          <Link
             to="/contactUs"
             className="flex items-center -mt-3 text-sm w-full md:w-[200px] h-[40px] bg-[#2A88B9] hover:bg-[#3b95bf] rounded-md px-4 text-white transition-all duration-200"
           >
-            Contact Us
+            {t("contactUs")}
           </Link>
         </div>
       )}

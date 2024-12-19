@@ -1,9 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
 import Aro from ".././assets/icons/ArrowRight.svg";
-import usre from "../assets/icons/User.png";
 import { Link } from "react-router-dom";
 import { AiOutlineUser } from "react-icons/ai";
+import useLocalization from "../Hooks/useLocalization";
 const LoginFlot = () => {
+  const { dir } = useLocalization();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
 
@@ -27,14 +28,20 @@ const LoginFlot = () => {
   }, []);
 
   return (
-    <div className="relative z-[111111111111111111111] text-black">
+    <div
+      className="relative z-[111111111111111111111] text-black"
+      ref={menuRef}
+    >
       <button onClick={toggleMenu}>
         <AiOutlineUser className="w-8 h-8 text-white" />
       </button>
       {isMenuOpen && (
         <div
-          ref={menuRef}
-          className="absolute flex flex-col items-center rounded-xl right-1 max-sm:-right-[53px] top-[50px] mx-auto z-40 bg-white shadow-lg p-3 text-sm h-[444px] w-[424px] max-sm:w-[320px]"
+          className={`absolute flex flex-col items-center rounded-xl ${
+            dir === "ltr"
+              ? "right-1 max-sm:-right-[53px]"
+              : "left-1 max-sm:-left-[53px]"
+          } top-[50px] mx-auto z-40 bg-white shadow-lg p-3 text-sm h-[444px] w-[424px] max-sm:w-[320px]`}
         >
           <div>
             <h1 className="text-xl pt-5 font-semibold ">

@@ -2,18 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 :root {
-  --main-color: #1B6392;
+  --main-color: #1b6392;
   --bMC: #427ea6;
 
-  --sec-color : #fa8232;
+  --sec-color: #fa8232;
 
   /* --main-color: #31111D;
   --bMC: #5a2337;
   --sec-color : #BE4646; */
 
   --hover-main-color: #411b29;
-
-
 
   --frist-color: #3995ff;
   --secound-color: #5db2ff;
@@ -94,4 +92,28 @@ a {
   .containerAK {
     width: 86%;
   }
+}
+
+.swiper-pagination-bullet {
+  /* margin-top: 0px !important; */
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--sec-color) !important;
+
+}
+.swiper-button-next,
+.swiper-button-prev {
+  top: 43% !important;
+  width: 30px !important;
+  height: 30px !important;
+  color: var(--sec-color) !important;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 18px !important;
 }

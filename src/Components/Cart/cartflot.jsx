@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
-import car from "../../assets/icons/ShoppingCartSimple.png";
 import CardCar from "./cardcarflot";
 import { BsCart3 } from "react-icons/bs";
 import im1 from "../../assets/Imgs/cart1.png";
 import Aro from "../../assets/icons/ArrowRight.svg";
-import { BiSolidCart } from "react-icons/bi";
+import useLocalization from "../../Hooks/useLocalization";
 const Cartflot = () => {
+  const { dir } = useLocalization();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
 
@@ -13,35 +13,36 @@ const Cartflot = () => {
     setIsMenuOpen((prev) => !prev);
   };
 
-  // Handle clicks outside the menu
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
         setIsMenuOpen(false);
       }
     };
-
-    // إضافة حدث الاستماع فقط بعد فتح القائمة
-    if (isMenuOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
-    }
+    
+    // Add event listener for clicks
+    document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [isMenuOpen]); // إضافة حالة isMenuOpen كاعتماد لتحديث
+  }, [isMenuOpen]);
 
   return (
-    <div className="relative z-[111111111111111111111] text-black">
+    <div
+      className="relative z-[111111111111111111111] text-black"
+      ref={menuRef}
+    >
       <button onClick={toggleMenu}>
         <BsCart3 className="w-7 h-7 text-white" />
       </button>
       {isMenuOpen && (
         <div
-          ref={menuRef}
-          className="absolute flex flex-col p-4 rounded-xl z-40 right-1 max-sm:-right-[117px] top-[50px] bg-white shadow-lg py-3 text-sm min-h-[464px] w-[424px] max-sm:w-[320px]"
+          className={`absolute flex flex-col p-4 rounded-xl z-40 ${
+            dir === "ltr"
+              ? "right-1 max-sm:-right-[117px]"
+              : "left-1 max-sm:-left-[117px]"
+          } top-[50px] bg-white shadow-lg py-3 text-sm min-h-[464px] w-[424px] max-sm:w-[320px]`}
         >
           <div className="px-6">
             <h1 className="text-xl items-start pt-3 font-semibold">

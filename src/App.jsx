@@ -9,6 +9,8 @@ import ResetPassword from "./Auth/ResetPassword";
 import ForgetPassword from "./Auth/ForgetPassword";
 import EmailVerification from "./Auth/EmailVerification";
 import NotFound from "./Pages/NotFound";
+import ContactUs from "./Pages/ContactUs";
+import AboutUs from "./Pages/AboutUs";
 function App() {
   return (
     <div className="App">
@@ -23,6 +25,8 @@ function App() {
           element={<ResetPassword />}
         />
         <Route path="/EmailVerification" element={<EmailVerification />} />
+        <Route path="/contactUs" element={<ContactUs />} />
+        <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
