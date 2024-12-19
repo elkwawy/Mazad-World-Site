@@ -12,7 +12,7 @@ export default function AuctionCarousel({ auctions }) {
       key={dir}
       modules={[Navigation, Pagination, Autoplay]}
       spaceBetween={24}
-      slidesPerView={4}
+      slidesPerView={1}
       // grabCursor={true}
       // navigation
       // pagination={{ clickable: true }}

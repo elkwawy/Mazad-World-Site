@@ -138,6 +138,7 @@ const Navbar = () => {
               <Link
                 key={index}
                 to={item.to}
+                onClick={toggleDrawer}
                 className="flex items-center gap-3 text-sm w-full md:w-[200px] h-[40px] bg-[#2A88B9] hover:bg-[#3b95bf] rounded-md px-4 text-white transition-all duration-200"
               >
                 {item.name}
@@ -148,12 +149,14 @@ const Navbar = () => {
           {/* Contact Us */}
           <Link
             to="/aboutUs"
+            onClick={toggleDrawer}
             className="flex items-center -mt-3 text-sm w-full md:w-[200px] h-[40px] bg-[#2A88B9] hover:bg-[#3b95bf] rounded-md px-4 text-white transition-all duration-200"
           >
             {t("aboutUs")}
           </Link>
           <Link
             to="/contactUs"
+            onClick={toggleDrawer}
             className="flex items-center -mt-3 text-sm w-full md:w-[200px] h-[40px] bg-[#2A88B9] hover:bg-[#3b95bf] rounded-md px-4 text-white transition-all duration-200"
           >
             {t("contactUs")}
