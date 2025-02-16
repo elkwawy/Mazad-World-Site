@@ -14,9 +14,9 @@ import AboutUs from "@/pages/AboutUs";
 import Footer from "@/layouts/Footer";
 import CategoriesPage from "@/features/categories/CategoriesPage";
 import NewsDetails from "@/pages/NewsDetails";
-import BestDealsPage from "./features/bestDeals/BestDealsPage";
-import DealDetails from "./components/DealDetails";
-import AuctionsPage from "./features/Auctions/AuctionsPage";
+import BestDealsPage from "@/features/bestDeals/BestDealsPage";
+import DealDetails from "@/components/DealDetails";
+import AuctionsPage from "@/features/Auctions/AuctionsPage";
 function App() {
   const { pathname } = useLocation();
   useEffect(() => {
