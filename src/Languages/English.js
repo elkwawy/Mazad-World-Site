@@ -11,12 +11,10 @@ export const English = {
     usd: "USD",
     egp: "EGP",
   },
-  categories: {
-    electronics: "Electronics",
-    jewelry: "Jewelry",
-    cars: "Cars",
-    antiques: "Antiques",
-    realEstate: "Real Estate",
+  links: {
+    home: "Home",
+    categories: "Categories",
+    auctions: "Auctions",
   },
   all_categories: "All Categories",
   contactUs: "Contact Us",
@@ -105,6 +103,7 @@ export const English = {
   imageAltText: "Problem with the image",
   // Live Auctions
   auctions: {
+    title : "Auctions",
     bidNow: "Bid Now",
     bids: "bids",
     currentBid: "Current Bid",

@@ -1,9 +1,15 @@
-import { FiShoppingCart, FiHeart } from 'react-icons/fi';
-import { FaStar } from 'react-icons/fa';
-
+import { FaRegEye } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
+import { ImHammer2 } from "react-icons/im";
+import { useNavigate } from "react-router-dom";
 export default function ProductCard({ product }) {
   const { name, price, image, discount, rating } = product;
-  
+
+  const navigate = useNavigate();
+  const handleShowDeal = (deal) => {
+    navigate(`/deal/${deal.id}`, { state: { deal } });
+  };
+
   return (
     <div className="bg-white p-4 border border-gray-100 rounded-lg shadow-sm group relative">
       {discount && (
@@ -14,8 +20,11 @@ export default function ProductCard({ product }) {
       <div className="relative aspect-square mb-4">
         <img src={image} alt={name} className="w-full h-full object-fill" />
         <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-          <button className="bg-white p-2 rounded-full shadow-md hover:bg-secondary hover:text-white transition-colors">
-            <FiHeart className="text-xl" />
+          <button
+            onClick={() => handleShowDeal(product)}
+            className="bg-white p-2 rounded-full shadow-md hover:bg-secondary hover:text-white transition-colors"
+          >
+            <FaRegEye className="text-xl" />
           </button>
         </div>
       </div>
@@ -24,7 +33,7 @@ export default function ProductCard({ product }) {
           <FaStar
             key={i}
             className={`${
-              i < Math.floor(rating) ? 'text-yellow-400' : 'text-gray-300'
+              i < Math.floor(rating) ? "text-yellow-400" : "text-gray-300"
             } text-sm`}
           />
         ))}
@@ -34,7 +43,7 @@ export default function ProductCard({ product }) {
       <div className="flex justify-between items-center">
         <span className="text-secondary font-bold text-lg">${price}</span>
         <button className="bg-gray-100 p-2 rounded-full hover:bg-secondary hover:text-white transition-colors">
-          <FiShoppingCart className="text-xl" />
+          <ImHammer2 className="text-xl rotate-90" />
         </button>
       </div>
     </div>

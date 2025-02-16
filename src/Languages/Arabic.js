@@ -11,12 +11,10 @@ export const Arabic = {
     usd: "دولار أمريكي",
     egp: "جنيه مصري",
   },
-  categories: {
-    electronics: "إلكترونيات",
-    jewelry: "مجوهرات",
-    cars: "سيارات",
-    antiques: "تحف",
-    realEstate: "عقارات",
+  links: {
+    home: "الصفحة الرئيسية",
+    categories: "التصنيفات",
+    auctions: "المزادات",
   },
   all_categories: "جميع الفئات",
   contactUs: "اتصل بنا",
@@ -102,6 +100,7 @@ export const Arabic = {
   imageAltText: "مشكلة في الصورة",
   // Live Auctions
   auctions: {
+    title : "المزادات",
     live_auctions: "المزادات الحية",
     bidNow: "المزايدة الآن",
     bids: "مزايدات",

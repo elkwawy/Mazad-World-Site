@@ -1,4 +1,6 @@
-export default function SectionTitle({ title, filters, viewAll }) {
+import { Link } from "react-router-dom";
+
+export default function SectionTitle({ title, filters, viewAll, to }) {
   return (
     <div className="flex justify-between items-center">
       <h2 className="text-2xl font-bold text-gray-800">{title}</h2>
@@ -15,9 +17,9 @@ export default function SectionTitle({ title, filters, viewAll }) {
         </div>
       )}
       {viewAll && (
-        <a href="#" className="text-secondary hover:underline">
+        <Link to={to} className="text-secondary hover:underline">
           {viewAll}
-        </a>
+        </Link>
       )}
     </div>
   );
