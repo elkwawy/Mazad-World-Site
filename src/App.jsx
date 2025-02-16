@@ -15,7 +15,7 @@ import Footer from "@/layouts/Footer";
 import CategoriesPage from "@/features/categories/CategoriesPage";
 import NewsDetails from "@/pages/NewsDetails";
 import BestDealsPage from "./features/bestDeals/BestDealsPage";
-import BestDealDetails from "./components/DealDetails";
+import DealDetails from "./components/DealDetails";
 import AuctionsPage from "./features/Auctions/AuctionsPage";
 function App() {
   const { pathname } = useLocation();
@@ -38,7 +38,7 @@ function App() {
         <Route path="/categories" element={<CategoriesPage />} />
         <Route path="/newsDetails/:id" element={<NewsDetails />} />
         <Route path="/bestDeals" element={<BestDealsPage />} />
-        <Route path="/deal/:id" element={<BestDealDetails />} />
+        <Route path="/deal/:id" element={<DealDetails />} />
         <Route path="/auctions" element={<AuctionsPage />} />
         <Route path="/contactUs" element={<ContactUs />} />
         <Route path="/aboutUs" element={<AboutUs />} />
