@@ -16,7 +16,7 @@ import AuctionsPage from "@/features/Auctions/AuctionsPage";
 import NotFound from "./features/NotFound";
 import NewsDetails from "./features/NewsDetails";
 import AboutUs from "./features/AboutUs";
-import DealDetails from "./components/DealDetails.jsx";
+import DealDetails from "@/features/DealDetails";
 function App() {
   const { pathname } = useLocation();
   useEffect(() => {
