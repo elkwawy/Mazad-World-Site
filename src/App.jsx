@@ -9,7 +9,7 @@ import ResetPassword from "@/features/auth/pages/ResetPassword";
 import ForgetPassword from "@/features/auth/pages/ForgetPassword";
 import EmailVerification from "@/features/auth/pages/EmailVerification";
 import ContactUs from "@/features/contactUs/ContactUs";
-import NotFound from "@/pages/NotFound";
+import NotFound from "./pages/NotFound";
 import AboutUs from "@/pages/AboutUs";
 import Footer from "@/layouts/Footer";
 import CategoriesPage from "@/features/categories/CategoriesPage";
