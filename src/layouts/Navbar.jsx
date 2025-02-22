@@ -3,7 +3,7 @@ import Cartflot from "../Components/Cart/cartflot";
 import LoginFlot from "@/features/auth/components/loginflot";
 import { Link } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
-import useLocalization from "../Hooks/useLocalization.js";
+import useLocalization from "@/hooks/useLocalization";
 import { BsFillTelephoneForwardFill } from "react-icons/bs";
 const Navbar = () => {
   const { t, i18n } = useLocalization();
