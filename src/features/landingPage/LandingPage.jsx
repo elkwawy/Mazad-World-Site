@@ -4,7 +4,7 @@ import LatestNews from "./components/LatestNews";
 import MainSection from "./components/MainSection";
 import LiveAuctions from "./components/LiveAuctions";
 import FeaturedSellers from "./components/FeaturedSellers";
-import FAQs from "./components/Faqs";
+import FAQs from "./components/FAQs";
 const LandingPage = () => {
   return (
     <div>
