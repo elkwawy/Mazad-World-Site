@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import Cartflot from "../Components/Cart/cartflot";
+import React, {  useState } from "react";
+import Cartflot from "@/components/cart/cartflot";
 import LoginFlot from "@/features/auth/components/loginflot";
 import { Link } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
@@ -65,7 +65,7 @@ const Navbar = () => {
             </select>
             <div className="flex items-center gap-2.5 max-md:hidden">
               <Cartflot />
-  
+
               <LoginFlot />
             </div>
 

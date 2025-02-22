@@ -1,7 +1,6 @@
 import { FiMail, FiPhone } from "react-icons/fi";
-import { useTranslation } from "react-i18next";
-import { useEffect, useState } from "react";
-import useLocalization from "../Hooks/useLocalization.js";
+
+import useLocalization from "@/hooks/useLocalization";
 function Footer() {
   const { t, dir } = useLocalization();
   // const { t, i18n } = useTranslation();

@@ -1,5 +1,5 @@
 import { FiAward, FiUsers, FiShoppingBag, FiTruck } from "react-icons/fi";
-import useLocalization from "../Hooks/useLocalization";
+import useLocalization from "@/hooks/useLocalization";
 
 export default function AboutUs() {
   const { t } = useLocalization();

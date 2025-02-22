@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Aro from "@/assets/icons/ArrowRight.svg";
 import { Link } from "react-router-dom";
 import { AiOutlineUser } from "react-icons/ai";
-import useLocalization from "../../../Hooks/useLocalization";
+import useLocalization from "@/hooks/useLocalization";
 const LoginFlot = () => {
   const { dir } = useLocalization();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
