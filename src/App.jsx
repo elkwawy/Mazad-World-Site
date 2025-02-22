@@ -12,7 +12,7 @@ import ContactUs from "@/features/contactUs/ContactUs";
 import Footer from "@/layouts/Footer";
 import CategoriesPage from "@/features/categories/CategoriesPage";
 import BestDealsPage from "@/features/bestDeals/BestDealsPage";
-import DealDetails from "@/components/DealDetails";
+import DealDetails from "@/components/Deal/DealDetails";
 import AuctionsPage from "@/features/Auctions/AuctionsPage";
 import NotFound from "./features/NotFound";
 import NewsDetails from "./features/NewsDetails";

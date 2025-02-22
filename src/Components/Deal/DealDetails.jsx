@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ImHammer2 } from "react-icons/im";
-import Button from "./ui/Button";
+import Button from "../ui/Button";
 const BestDealDetails = () => {
   const deal = {
     name: "Luxury Villa",
