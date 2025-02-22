@@ -8,7 +8,10 @@ const useLocalization = () => {
   useEffect(() => {
     const changeDirection = () => {
       setDir(i18n.language === "ar" ? "rtl" : "ltr");
-      document.documentElement.setAttribute("dir", i18n.language === "ar" ? "rtl" : "ltr");
+      document.documentElement.setAttribute(
+        "dir",
+        i18n.language === "ar" ? "rtl" : "ltr"
+      );
       document.documentElement.lang = i18n.language;
     };
 
