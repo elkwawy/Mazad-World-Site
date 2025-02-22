@@ -1,5 +1,5 @@
-import React, {  useState } from "react";
-import Cartflot from "@/components/cart/cartflot";
+import React, { useEffect, useState } from "react";
+import Cartflot from "../components/cart/cartflot";
 import LoginFlot from "@/features/auth/components/loginflot";
 import { Link } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
