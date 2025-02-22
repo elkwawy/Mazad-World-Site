@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ImHammer2 } from "react-icons/im";
-const DealDetails = () => {
+import Button from "./ui/Button";
+const BestDealDetails = () => {
   const deal = {
     name: "Luxury Villa",
     description:
@@ -78,4 +79,4 @@ const DealDetails = () => {
   );
 };
 
-export default DealDetails;
+export default BestDealDetails;
