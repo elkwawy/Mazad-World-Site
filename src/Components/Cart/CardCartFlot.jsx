@@ -1,5 +1,5 @@
 import xlo from "../../assets/icons/XLogo.png";
-function CardCar({ img, tite, price }) {
+function CardCartFlot({ img, tite, price }) {
   return (
     <>
       <div className="flex pt-7 justify-center items-center gap-10">
@@ -22,4 +22,4 @@ function CardCar({ img, tite, price }) {
     </>
   );
 }
-export default CardCar;
+export default CardCartFlot;

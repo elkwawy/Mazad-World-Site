@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import Cartflot from "../components/cart/cartflot";
+import React, {  useState } from "react";
 import LoginFlot from "@/features/auth/components/loginflot";
 import { Link } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
 import useLocalization from "@/hooks/useLocalization";
 import { BsFillTelephoneForwardFill } from "react-icons/bs";
+import Cartflot from "@/components/cart/CartFlot";
 const Navbar = () => {
   const { t, i18n } = useLocalization();
   const [isOpen, setIsOpen] = useState(false);

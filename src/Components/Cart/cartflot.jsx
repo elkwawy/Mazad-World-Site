@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
-import CardCar from "./cardcarflot";
 import { BsCart3 } from "react-icons/bs";
 import im1 from "../../assets/Imgs/cart1.png";
 import Aro from "../../assets/icons/ArrowRight.svg";
 import useLocalization from "../../Hooks/useLocalization";
-const Cartflot = () => {
+import CardCartFlot from "./CardCartFlot";
+const CartFlot = () => {
   const { dir } = useLocalization();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
@@ -19,7 +19,7 @@ const Cartflot = () => {
         setIsMenuOpen(false);
       }
     };
-    
+
     // Add event listener for clicks
     document.addEventListener("mousedown", handleClickOutside);
 
@@ -51,12 +51,12 @@ const Cartflot = () => {
           </div>
 
           <div>
-            <CardCar
+            <CardCartFlot
               img={im1}
               tite="Canon EOS 1500D DSLR Camera Body+ 18-55 mm"
               price={1500}
             />
-            <CardCar
+            <CardCartFlot
               img={im1}
               tite="Canon EOS 1500D DSLR Camera Body+ 18-55 mm"
               price={1500}
@@ -81,4 +81,4 @@ const Cartflot = () => {
   );
 };
 
-export default Cartflot;
+export default CartFlot;
