@@ -1,5 +1,5 @@
-import ProductCard from "@/components/products/ProductCard";
-import SectionTitle from "@/components/ui/SectionTitle";
+import ProductCard from "../../components/products/ProductCard";
+
 import { useTranslation } from "react-i18next";
 
 export default function BestDealsPage() {
