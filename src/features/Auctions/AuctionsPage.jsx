@@ -1,4 +1,4 @@
-import useLocalization from "@/Hooks/useLocalization";
+import useLocalization from "@/hooks/useLocalization";
 import AuctionCard from "../landingPage/components/auctions/AuctionCard";
 
 const AuctionsPage = () => {
