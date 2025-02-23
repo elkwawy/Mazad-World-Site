@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
-import SectionTitle from "@/components/ui/SectionTitle";
+import SectionTitle from "@/component/ui/SectionTitle";
 
 const faqs = [
   {

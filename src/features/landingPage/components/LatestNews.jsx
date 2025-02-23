@@ -1,4 +1,4 @@
-import SectionTitle from "@/components/ui/SectionTitle";
+import SectionTitle from "@/component/ui/SectionTitle";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 

@@ -4,7 +4,7 @@ import { FaTshirt, FaCar } from "react-icons/fa";
 import { FaArrowUpFromWaterPump } from "react-icons/fa6";
 import { IoLogoElectron } from "react-icons/io5";
 import { useTranslation } from "react-i18next";
-import SectionTitle from "@/components/ui/SectionTitle";
+import SectionTitle from "@/component/ui/SectionTitle";
 
 export default function CategoryGrid() {
   const { t } = useTranslation();
