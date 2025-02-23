@@ -18,7 +18,7 @@ import NewsDetails from "@/staticPages/NewsDetails";
 import AboutUs from "@/staticPages/AboutUs";
 import DealDetails from "@/component/DealDetails";
 function App() {
-  //
+  //eeeeeffccdfdeddd
   const { pathname } = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
