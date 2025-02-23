@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import { BsCart3 } from "react-icons/bs";
-import im1 from "../../assets/Imgs/cart1.png";
-import Aro from "../../assets/icons/ArrowRight.svg";
-import useLocalization from "../../Hooks/useLocalization";
+import im1 from "@/assets/Imgs/cart1.png";
+import Aro from "@/assets/icons/ArrowRight.svg";
+import useLocalization from "@/hooks/useLocalization";
 import CardCartFlot from "./CardCartFlot";
 const CartFlot = () => {
   const { dir } = useLocalization();
