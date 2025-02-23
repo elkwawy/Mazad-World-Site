@@ -64,7 +64,7 @@ const Navbar = () => {
               </option>
             </select>
             <div className="flex items-center gap-2.5 max-md:hidden">
-              <Cartflot />
+              <CartFlot />
 
               <LoginFlot />
             </div>
@@ -108,7 +108,7 @@ const Navbar = () => {
 
           {/*  Icons */}
           <div className="flex items-center justify-center gap-4">
-            <Cartflot />
+            <CartFlot />
             <LoginFlot />
             <select className="bg-transparent text-white">
               <option className="bg-[#1B6392]" value="USD">
