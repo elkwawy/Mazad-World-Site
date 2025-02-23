@@ -1,4 +1,4 @@
-import xlo from "../../assets/icons/XLogo.png";
+import xlo from "@/assets/icons/XLogo.png";
 function CardCartFlot({ img, tite, price }) {
   return (
     <>
