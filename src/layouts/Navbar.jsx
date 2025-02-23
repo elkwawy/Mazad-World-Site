@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
 import useLocalization from "@/hooks/useLocalization";
 import { BsFillTelephoneForwardFill } from "react-icons/bs";
-import CartFlot from "@/components/cart/CartFlot";
+import CartFlot from "@/features/cart/components/CartFlot";
 const Navbar = () => {
   const { t, i18n } = useLocalization();
   const [isOpen, setIsOpen] = useState(false);
