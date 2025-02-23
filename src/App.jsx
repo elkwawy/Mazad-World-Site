@@ -15,7 +15,7 @@ import BestDealsPage from "@/features/bestDeals/BestDealsPage";
 import AuctionsPage from "@/features/Auctions/AuctionsPage";
 import NotFound from "./features/NotFound";
 import NewsDetails from "./features/NewsDetails";
-import AboutUs from "./pages/AboutUs";
+import AboutUs from "@/pages/AboutUs";
 import DealDetails from "@/component/DealDetails";
 function App() {
   const { pathname } = useLocation();
