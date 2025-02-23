@@ -13,8 +13,8 @@ import Footer from "@/layouts/Footer";
 import CategoriesPage from "@/features/categories/CategoriesPage";
 import BestDealsPage from "@/features/bestDeals/BestDealsPage";
 import AuctionsPage from "@/features/Auctions/AuctionsPage";
-import NotFound from "./features/NotFound";
-import NewsDetails from "./features/NewsDetails";
+import NotFound from "@/staticPages/NotFound";
+import NewsDetails from "@/staticPages/NewsDetails";
 import AboutUs from "@/staticPages/AboutUs";
 import DealDetails from "@/component/DealDetails";
 function App() {
