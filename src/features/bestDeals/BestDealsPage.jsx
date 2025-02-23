@@ -1,4 +1,4 @@
-import ProductCard from "../../component/products/ProductCard";
+import ProductCard from "../../components/products/ProductCard";
 
 import { useTranslation } from "react-i18next";
 

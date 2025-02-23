@@ -1,5 +1,5 @@
 import AuctionCarousel from "./auctions/AuctionCarousel";
-import SectionTitle from "@/component/ui/SectionTitle";
+import SectionTitle from "@/components/ui/SectionTitle";
 import useLocalization from "@/hooks/useLocalization";
 
 export default function LiveAuctions() {

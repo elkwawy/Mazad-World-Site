@@ -1,6 +1,6 @@
 import { FiStar, FiCheck } from "react-icons/fi";
 import useLocalization from "@/hooks/useLocalization";
-import SectionTitle from "@/component/ui/SectionTitle";
+import SectionTitle from "@/components/ui/SectionTitle";
 
 export default function FeaturedSellers() {
   const { t } = useLocalization();

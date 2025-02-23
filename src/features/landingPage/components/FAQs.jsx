@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
-import SectionTitle from "@/component/ui/SectionTitle";
+import SectionTitle from "@/components/ui/SectionTitle";
 
 const faqs = [
   {
@@ -30,9 +30,7 @@ export default function FAQs() {
   return (
     <section className="py-12 pb-20">
       <div className="containerAK">
-        <SectionTitle
-          title="Frequently Asked Questions"
-        />
+        <SectionTitle title="Frequently Asked Questions" />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
           {faqs.map((faq, index) => (
             <div
