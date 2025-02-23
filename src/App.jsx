@@ -16,9 +16,9 @@ import AuctionsPage from "@/features/Auctions/AuctionsPage";
 import NotFound from "@/staticPages/NotFound";
 import NewsDetails from "@/staticPages/NewsDetails";
 import AboutUs from "@/staticPages/AboutUs";
-import DealDetails from "@/component/DealDetails";
+import DealDetails from "@/components/DealDetails";
 function App() {
-  //eeeeeffccdfdeddd
+  // eeeeeffccdfdedddddddeedfdfff
   const { pathname } = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
