@@ -1,80 +1,120 @@
-import Aro from "@/assets/icons/ArrowRight.svg";
 import React from "react";
 import { Link } from "react-router-dom";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import useAuthHook from "../hooks/useAuth";
 import Navgit from "../components/Navgit";
+import InputForm from "@/components/helpers/InputForm";
+import PasswordForm from "@/components/helpers/PasswordForm";
+import ButtonForm from "@/components/helpers/ButtonForm";
 
 function SignUp() {
+  const { handleSignup, loading } = useAuthHook();
+
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      password: "",
+      password_confirmation: "",
+    },
+    validationSchema: Yup.object({
+      name: Yup.string().required("Name is required"),
+      email: Yup.string()
+        .email("Invalid email address")
+        .required("Email is required"),
+      password: Yup.string()
+        .min(6, "Must be at least 6 characters")
+        .required("Password is required"),
+      password_confirmation: Yup.string()
+        .oneOf([Yup.ref("password"), null], "Passwords must match")
+        .required("Confirm password is required"),
+    }),
+    onSubmit: async (values) => {
+      await handleSignup(values);
+    },
+  });
+
   return (
     <>
       <Navgit />
-      <div className="flex items-center justify-center pt-5  pb-10 sm:my-[20px]">
-        <div className="w-[424px]  max-sm:w-[310px] rounded shadow-2xl pb-10  text-xl font-semibold ">
-          <div className="text-xl font-semibold">
-            <button className="w-[212px] max-sm:w-[150px] h-[60px] text-[#77878F]">
-              <Link to="/login">Sign In</Link>
-            </button>
-            <button className="w-[212px] max-sm:w-[150px] h-[60px] border-b-4 border-[#FA8232]">
+      <div className="max-w-3xl mx-auto flex items-center justify-center mt-2 mb-9">
+        <div className="w-[90%] sm:w-[70%] rounded-lg border border-gray-200 shadow-2xl">
+          <div className="flex items-center text-xl font-semibold">
+            <Link
+              to="/login"
+              className="w-[50%] h-[60px] flex items-center justify-center"
+            >
+              Sign In
+            </Link>
+            <button className="w-[50%] h-[60px] border-b-4 border-[#FA8232]">
               Sign Up
             </button>
           </div>
 
-          <div className="flex flex-col    justify-center items-center  ">
-            <div>
-              <div className="flex justify-start  gap-44 py-4 ">
-                <h1>Name</h1>
-              </div>
-              <input
-                type="text"
-                className="border  w-[360px]  max-sm:w-[280px] h-[44px] justify-center flex rounded px-3   "
-              />
-            </div>
-          </div>
-          <div className="  flex flex-col justify-center items-center  ">
-            <div>
-              <div className="flex justify-start  gap-44 py-4 ">
-                <h1>Email Address</h1>
-              </div>
-              <input
-                type="email"
-                className="border  w-[360px]  max-sm:w-[280px] h-[44px] justify-center flex rounded  px-3   "
-              />
-            </div>
-          </div>
-          <div className="  flex flex-col  pl-9  max-sm:pl-3 ">
-            <div className="flex  items-start justify-start text-start max-sm:gap-20 py-4   ">
-              <h1>Password</h1>
-            </div>
-            <input
-              type="password"
-              placeholder="8+ characters"
-              className="border  w-[360px]  max-sm:w-[280px] h-[44px] justify-center flex rounded px-3"
+          <form
+            className="flex flex-col justify-center items-center gap-3 p-4 mt-3"
+            onSubmit={formik.handleSubmit}
+          >
+            <InputForm
+              labelName="Name"
+              type="text"
+              name="name"
+              value={formik.values.name}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              condition={formik.errors.name && formik.touched.name}
+              placeholder="Enter your name"
+              errorMessage={formik.errors.name}
             />
-          </div>
-          <div className="  flex flex-col  pl-9  max-sm:pl-3   ">
-            <div className="flex  items-start justify-start text-start max-sm:gap-20 py-4   ">
-              <h1>Confirm Password</h1>
-            </div>
-            <input
-              type="password"
-              className="border  w-[360px]  max-sm:w-[280px] h-[44px] justify-center flex rounded px-3"
+            <InputForm
+              labelName="Email"
+              type="text"
+              name="email"
+              value={formik.values.email}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              condition={formik.errors.email && formik.touched.email}
+              placeholder="Enter your email"
+              errorMessage={formik.errors.email}
             />
-          </div>
-          <div className="pl-9  max-sm:pl-3   pt-3 flex gap-3 items-center">
-            <div>
+
+            <PasswordForm
+              labelName="Password"
+              type="password"
+              name="password"
+              value={formik.values.password}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              condition={formik.errors.password && formik.touched.password}
+              errorMessage={formik.errors.password}
+              PasswordLight={formik.values.password.length}
+            />
+
+            <PasswordForm
+              labelName="Confirm Password"
+              type="password"
+              name="password_confirmation"
+              value={formik.values.password_confirmation}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              condition={
+                formik.errors.password_confirmation && formik.touched.password_confirmation
+              }
+              errorMessage={formik.errors.password_confirmation}
+              PasswordLight={formik.values.password_confirmation.length}
+            />
+
+            <div className="flex gap-3 items-center">
               <input type="checkbox" />
+              <div className="text-sm">
+                Are you agree to Clicon{" "}
+                <span className="text-main-color">Terms of Condition</span>
+              </div>
             </div>
-            <div className="text-sm">
-              {" "}
-              Are you agree to Clicon{" "}
-              <span className="text-blue-700">Terms of Condition</span>
-            </div>
-          </div>
-          <div className="bg-white h-[48px] mt-3  mx-auto w-[360px]  max-sm:w-[280px]  ">
-            <button className="bg-[#FA8232] h-[48px] w-[360px]  max-sm:w-[280px] flex justify-center items-center gap-1 text-sm font-semibold text-white text-center  uppercase  rounded">
-              {" "}
-              Sign up <img src={Aro} />
-            </button>
-          </div>
+
+            <ButtonForm title="Sign Up" loading={loading} type="submit" />
+          </form>
         </div>
       </div>
     </>

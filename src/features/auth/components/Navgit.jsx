@@ -18,16 +18,18 @@ const Navgit = () => {
   };
 
   return (
-    <nav className="text-sm text-gray-600 pl-56">
-      <ol className="flex">
+    <nav className="text-sm mt-2">
+      <ol className="flex  containerAK">
         {/* Home link */}
         <li>
-          <Link to="/" className="text-blue-500 hover:underline">
+          <Link to="/" className="text-sec-color text-lg hover:underline">
             Home
           </Link>
         </li>
         {/* Add separator after Home */}
-        {pathSegments.length > 0 && <span className="px-2">{" >"}</span>}
+        {pathSegments.length > 0 && (
+          <span className="px-2 text-lg ">{" >"}</span>
+        )}
 
         {/* Dynamically generate the rest of the breadcrumb */}
         {pathSegments.map((segment, index) => {
@@ -37,16 +39,21 @@ const Navgit = () => {
           return (
             <li key={path} className="flex items-center">
               {isLast ? (
-                <span className="font-semibold text-gray-700">
+                <span className="font-semibold text-gray-700 text-lg ">
                   {breadcrumbMap[segment] || segment}
                 </span>
               ) : (
-                <Link to={path} className="text-blue-500 hover:underline">
+                <Link
+                  to={path}
+                  className="text-sec-color hover:underline text-lg "
+                >
                   {breadcrumbMap[segment] || segment}
                 </Link>
               )}
               {/* Separator between breadcrumbs */}
-              {!isLast && <span className="mx-2 text-gray-400">{" >"}</span>}
+              {!isLast && (
+                <span className="mx-2 text-gray-400 text-lg">{" >"}</span>
+              )}
             </li>
           );
         })}

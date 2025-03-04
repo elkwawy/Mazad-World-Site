@@ -17,6 +17,7 @@ import NotFound from "@/staticPages/NotFound";
 import NewsDetails from "@/staticPages/NewsDetails";
 import AboutUs from "@/staticPages/AboutUs";
 import DealDetails from "@/components/DealDetails";
+import IdentityVerification from "@/features/auth/pages/IdentityVerification";
 function App() {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -29,6 +30,10 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
+        <Route
+          path="/identityVerification"
+          element={<IdentityVerification />}
+        />
         <Route path="/login/forgetPassword" element={<ForgetPassword />} />
         <Route
           path="/login/forgetPassword/ResetPassword"

@@ -1,56 +1,91 @@
-import Aro from "@/assets/icons/ArrowRight.svg";
 import React from "react";
 import { Link } from "react-router-dom";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import useAuthHook from "../hooks/useAuth";
 import Navgit from "../components/Navgit";
+import InputForm from "@/components/helpers/InputForm";
+import PasswordForm from "@/components/helpers/PasswordForm";
+import ButtonForm from "@/components/helpers/ButtonForm";
 
 function Login() {
+  const { handleLogin, loading } = useAuthHook();
+
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+    validationSchema: Yup.object({
+      email: Yup.string()
+        .email("Invalid email address")
+        .required("Email is Required"),
+      password: Yup.string()
+        .min(6, "Must be at least 6 characters")
+        .required("Password is Required"),
+    }),
+    onSubmit: async (values) => {
+      await handleLogin(values);
+    },
+  });
+
   return (
-    <>
+    <div>
       <Navgit />
-      <div className="flex items-center justify-center pt-5  pb-10 sm:my-[20px]">
-        <div className="w-[424px]  max-sm:w-[310px] rounded shadow-2xl pb-10  text-xl font-semibold ">
-          <div>
-            <button className="w-[212px] max-sm:w-[150px] h-[60px] border-b-4 border-[#FA8232]">
+      <div className="max-w-3xl mx-auto flex items-center justify-center mt-2 mb-9">
+        <div className="w-[90%] sm:w-[70%] rounded-lg border border-gray-200 shadow-2xl">
+          <div className="flex items-center text-xl font-semibold">
+            <button className="w-[50%] h-[60px] border-b-4 border-[#FA8232]">
               Sign In
             </button>
-            <button className="w-[212px] max-sm:w-[150px] h-[60px] text-[#77878F]">
-              <Link to="/signup"> Sign Up</Link>
-            </button>
+            <Link
+              to="/signup"
+              className="w-[50%] h-[60px] flex items-center justify-center"
+            >
+              Sign Up
+            </Link>
           </div>
-          <div className="  flex flex-col justify-center items-center  ">
-            <div>
-              <div className="flex justify-start  gap-44 py-4 ">
-                <h1>Email Address</h1>
-              </div>
-              <input
-                type="email"
-                className="border  w-[360px]  max-sm:w-[280px] h-[44px] justify-center flex rounded px-2   "
-              />
-            </div>
-          </div>
-          <div className="  flex flex-col justify-center items-center  ">
-            <div className="flex justify-between items-center gap-44 max-sm:gap-20 py-4 ">
-              <h1>Password</h1>
-              <h1 className="text-[#2DA5F3] font-medium text-sm">
-                <Link to="forgetPassword" className="text-[#2DA5F3]">
-                  Forget Password
-                </Link>
-              </h1>
-            </div>
-            <input
-              type="password"
-              className="border  w-[360px]  max-sm:w-[280px] h-[44px] justify-center flex rounded px-2 "
+
+          <form
+            className="flex flex-col justify-center items-end gap-3 p-4 mt-3"
+            onSubmit={formik.handleSubmit}
+          >
+            <InputForm
+              labelName="Email"
+              type="text"
+              name="email"
+              value={formik.values.email}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              condition={formik.errors.email && formik.touched.email}
+              placeholder="Enter your email"
+              errorMessage={formik.errors.email}
             />
-          </div>
-          <div className="bg-white h-[48px] mt-8  mx-auto w-[360px]  max-sm:w-[280px]  ">
-            <button className="bg-[#FA8232] h-[48px] w-[360px]  max-sm:w-[280px] flex justify-center items-center gap-1 text-sm font-semibold text-white text-center  uppercase  rounded">
-              {" "}
-              Sign in <img src={Aro} />
-            </button>
-          </div>
+
+            <PasswordForm
+              labelName="Password"
+              type="password"
+              name="password"
+              value={formik.values.password}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              condition={formik.errors.password && formik.touched.password}
+              errorMessage={formik.errors.password}
+              PasswordLight={formik.values.password.length}
+            />
+
+            <Link
+              to="/login/forgetPassword"
+              className="text-[#2DA5F3] font-medium -ml-3 text-sm max-md:ml-10"
+            >
+              Forget Password
+            </Link>
+
+            <ButtonForm title="Sign In" loading={loading} type="submit" />
+          </form>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

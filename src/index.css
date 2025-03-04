@@ -56,6 +56,33 @@ a {
   transition-duration: 0.3s;
 }
 
+@layer base {
+  :root {
+    --main-color: #4880ff;
+    --sec-color: #909090;
+    --hover-color: #f3f4f6;
+    --background-color: #f5f6fa;
+  }
+  .trans {
+    @apply transition-all duration-300;
+  }
+  .inputD {
+    @apply w-full h-[40px] px-3 text-sm rounded-md border focus:border-sec-color transition-all duration-300 ;
+  }
+  .errorD {
+    @apply border-red-600 focus:border-red-600;
+  }
+  .msgError {
+    @apply text-red-500 bg-red-200 px-2 rounded text-sm;
+  }
+
+}
+
+
+
+
+
+
 .myAK {
   margin: 60px 0;
 }

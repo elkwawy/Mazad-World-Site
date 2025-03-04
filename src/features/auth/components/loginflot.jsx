@@ -54,7 +54,7 @@ const LoginFlot = () => {
               <h1 className="py-2">Email Address</h1>
               <input
                 type="email"
-                className="border px-3 w-[360px] max-md:w-[280px] h-[44px]"
+                className="border px-3 w-[360px] max-md:w-[280px] h-[44px] rounded-md trans focus:border-sec-color"
               />
             </div>
             <div className="h-[72px] max-md:w-[320px] pt-5">
@@ -70,11 +70,11 @@ const LoginFlot = () => {
               </div>
               <input
                 type="password"
-                className="border px-3 w-[360px] max-md:w-[280px] h-[44px] "
+                className="border px-3 w-[360px] h-[44px] rounded-md trans focus:border-sec-color"
               />
             </div>
             <div className="bg-white h-[48px] mt-11 w-[360px] max-md:w-[277px] ">
-              <button className="bg-[#FA8232] h-[48px]  w-[360px] max-md:w-[277px] flex justify-center items-center gap-2 text-sm font-semibold text-white text-center">
+              <button className="bg-[#FA8232] trans hover:opacity-85 rounded-md h-[48px]  w-[360px] max-md:w-[277px] flex justify-center items-center gap-2 text-sm font-semibold text-white text-center">
                 LOGIN <img src={Aro} alt="Arrow Icon" />
               </button>
             </div>
@@ -84,7 +84,7 @@ const LoginFlot = () => {
             <Link to="/SignUp">
               <button
                 onClick={toggleMenu}
-                className="bg-white mt-3 h-[48px] max-md:w-[277px] w-[360px] flex justify-center items-center gap-2 text-sm font-semibold text-[#FA8232] border-[#FFE7D6] border shadow-[#FFE7D6] "
+                className="bg-white trans hover:border-[#FA8232] rounded-md mt-3 h-[48px] max-md:w-[277px] w-[360px] flex justify-center items-center gap-2 text-sm font-semibold text-[#FA8232] border-[#FFE7D6] border shadow-[#FFE7D6] "
               >
                 CREATE ACCOUNT <img src={Aro} alt="Arrow Icon" />
               </button>
