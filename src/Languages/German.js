@@ -7,14 +7,12 @@ export const German = {
     arabic: "Arabisch",
     german: "Deutsch",
   },
-  currency: {
-    usd: "USD",
-    egp: "EGP",
-  },
   links: {
     home: "Startseite",
     categories: "Kategorien",
     auctions: "Auktionen",
+    aboutUs: "Umsatz",
+    contactUs: "Kontaktieren",
   },
   all_categories: "Alle Kategorien",
   contactUs: "Kontaktieren",
@@ -103,7 +101,7 @@ export const German = {
   imageAltText: "Problem mit dem Bild",
   // Live Auctions
   auctions: {
-    title : "Auktionen",
+    title: "Auktionen",
     live_auctions: "Live-Auktionen",
     view_all: "Alle Auktionen anzeigen",
     bidNow: "Jetzt bieten",

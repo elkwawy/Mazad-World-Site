@@ -7,14 +7,12 @@ export const English = {
     arabic: "Arabic",
     german: "German",
   },
-  currency: {
-    usd: "USD",
-    egp: "EGP",
-  },
   links: {
     home: "Home",
     categories: "Categories",
     auctions: "Auctions",
+    aboutUs: "About Us",
+    contactUs: "Contact Us",
   },
   all_categories: "All Categories",
   contactUs: "Contact Us",

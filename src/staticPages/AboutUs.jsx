@@ -6,7 +6,7 @@ export default function AboutUs() {
   return (
     <div className="bg-gray-50 shadow-md">
       {/* Hero Section */}
-      <div className="bg-white text-black mt-20 pb-20">
+      <div className="bg-white text-black mt-10 pb-10">
         <div className="containerAK text-center">
           <h1 className="text-4xl font-bold mb-4">{t("about_us.heroTitle")}</h1>
           <p className="max-w-2xl mx-auto text-lg text-gray-500">
@@ -16,7 +16,7 @@ export default function AboutUs() {
       </div>
 
       {/* Stats Section */}
-      <div className="containerAK py-16">
+      <div className="containerAK py-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div className="text-center">
             <div className="text-4xl font-bold text-secondary mb-2">10K+</div>
@@ -38,7 +38,7 @@ export default function AboutUs() {
       </div>
 
       {/* Story Section */}
-      <div className="bg-white py-16">
+      <div className="bg-white py-10">
         <div className="containerAK">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-center">{t("about_us.ourStoryTitle")}</h2>
@@ -49,7 +49,7 @@ export default function AboutUs() {
       </div>
 
       {/* Features Section */}
-      <div className="containerAK px-4 py-16">
+      <div className="containerAK px-4 py-10">
         <h2 className="text-3xl font-bold mb-12 text-center">{t("about_us.whyChooseUsTitle")}</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="text-center">

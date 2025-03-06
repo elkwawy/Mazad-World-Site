@@ -5,19 +5,19 @@ export default function ContactUs() {
   const { t } = useLocalization();
 
   return (
-    <div className="min-h-screen py-10">
+    <div className="min-h-screen py-7">
       <div className="containerAK">
-        <h1 className="text-4xl font-bold text-center mb-12">
+        <h1 className="text-4xl font-bold text-center mb-7">
           {t("contact_us.title")}
         </h1>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-11">
           {/* Contact Form */}
           <div className="bg-white p-8 rounded-lg shadow border border-gray-200">
             <h2 className="text-2xl font-semibold mb-6">
               {t("contact_us.send_message")}
             </h2>
-            <form className="space-y-6">
+            <form className="space-y-5">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   {t("contact_us.name")}
@@ -58,7 +58,7 @@ export default function ContactUs() {
           </div>
 
           {/* Contact Information */}
-          <div className="space-y-8">
+          <div className="space-y-7">
             <div className="bg-white p-8 rounded-lg shadow border border-gray-200">
               <h2 className="text-2xl font-semibold mb-6">
                 {t("contact_us.info_title")}

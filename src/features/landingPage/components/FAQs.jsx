@@ -6,7 +6,7 @@ const faqs = [
   {
     question: "How do online auctions work?",
     answer:
-      "Online auctions allow users to bid on items within a specific time frame. The highest bidder at the end wins the auction.",
+      "Online auctions allow users to bid on  The highest bidder  Online auctions allow users to bid on items within a specific time frame. The highest bidder at the endOnline auctions allow users to bid on items within a specific time frame. The highest bidder at the endOnline auctions allow users to bid on items within a specific time frame. The highest bidder at the endOnline auctions allow users to bid on items within a specific time frame. The highest bidder at the endOnline auctions allow users to bid on items within a specific time frame. The highest bidder at the endOnline auctions allow users to bid on items within a specific time frame. The highest bidder at the endat the end wins the auction.",
   },
   {
     question: "What are the payment options for auctions?",
@@ -31,11 +31,11 @@ export default function FAQs() {
     <section className="py-12 pb-20">
       <div className="containerAK">
         <SectionTitle title="Frequently Asked Questions" />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+        <div className="grid grid-cols-1  gap-4 mt-8">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-white shadow-lg rounded-lg p-4 border border-gray-200"
+              className="bg-white shadow-lg rounded-lg space-y-2 p-4 border border-gray-200"
             >
               <button
                 className="w-full flex justify-between items-center text-left font-medium text-lg"

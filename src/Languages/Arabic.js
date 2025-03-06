@@ -7,18 +7,17 @@ export const Arabic = {
     arabic: "عربي",
     german: "ألماني",
   },
-  currency: {
-    usd: "دولار أمريكي",
-    egp: "جنيه مصري",
-  },
+
   links: {
     home: "الصفحة الرئيسية",
     categories: "التصنيفات",
     auctions: "المزادات",
+    aboutUs: "من نحن",
+    contactUs: "اتصل بنا",
   },
   all_categories: "جميع الفئات",
-  contactUs: "اتصل بنا",
   aboutUs: "من نحن",
+  contactUs: "اتصل بنا",
   // Main Section
   M_categories: {
     electronics: "إلكترونيات",

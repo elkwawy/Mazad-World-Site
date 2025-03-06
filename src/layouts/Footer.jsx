@@ -1,23 +1,30 @@
 import { FiMail, FiPhone } from "react-icons/fi";
-
+import logo from "@/assets/logo.png";
 import useLocalization from "@/hooks/useLocalization";
 function Footer() {
   const { t, dir } = useLocalization();
   // const { t, i18n } = useTranslation();
   // const [dir, setDir] = useState(i18n.language === "ar" ? "rtl" : "ltr");
- 
+
   // useEffect(() => {
   //   setDir(i18n.language === "ar" ? "rtl" : "ltr");
   // }, [i18n.language]);
-  
+
   return (
     <footer className="bg-[#191c1f]">
       <div className="containerAK mx-auto px-4 py-12 text-gray-300">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-gray-300">
           <div>
-            <h3 className="text-xl font-bold text-white mb-4">
-              {t("footer.title")}
-            </h3>
+            <div className="inline-flex items-center justify-center gap-1">
+              <img
+                src={logo}
+                alt="logo"
+                className="w-[40px]"
+              />
+              <h3 className="text-xl font-bold text-white -mb-2">
+                {t("footer.title")}
+              </h3>
+            </div>
             <p className="text-sm mb-4">{t("footer.address")}</p>
             <div className="space-y-2">
               <div className="flex items-center">

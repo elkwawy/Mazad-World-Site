@@ -1,9 +1,12 @@
 import useLocalization from "@/hooks/useLocalization";
-import AuctionCard from "../landingPage/components/auctions/AuctionCard";
-
+import AuctionCard from "@/components/AuctionCard";
+import useaAuctionsHook from "./useaAuctionsHook";
+import { useEffect } from "react";
 const AuctionsPage = () => {
+  const { auctions, loading, FetchAuctions } = useaAuctionsHook();
   const { t } = useLocalization();
-  const auctions = [
+
+  const auctionsT = [
     {
       id: 1,
       name: t("auctions.name1"), // مفتاح الترجمة
@@ -85,12 +88,18 @@ const AuctionsPage = () => {
       category: t("auctions.category8"),
     },
   ];
+
+  useEffect(() => {
+    FetchAuctions();
+  }, []);
   return (
-    <div className="containerAK py-10 min-h-screen">
-      <h1 className="text-4xl font-bold text-center mb-10">{t("auctions.title")}</h1>
+    <div className="containerAK py-7 min-h-screen">
+      <h1 className="text-4xl font-bold text-center mb-7">
+        {t("auctions.title")}
+      </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {auctions.map((auction) => (
-          <AuctionCard auction={auction} />
+          <AuctionCard key={auction.id} auction={auction} />
         ))}
       </div>
     </div>

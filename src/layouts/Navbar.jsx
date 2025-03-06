@@ -1,10 +1,11 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import LoginFlot from "@/features/auth/components/loginflot";
 import { Link } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
 import useLocalization from "@/hooks/useLocalization";
 import { BsFillTelephoneForwardFill } from "react-icons/bs";
 import CartFlot from "@/features/cart/components/CartFlot";
+import logo from "@/assets/logo.png";
 const Navbar = () => {
   const { t, i18n } = useLocalization();
   const [isOpen, setIsOpen] = useState(false);
@@ -22,24 +23,19 @@ const Navbar = () => {
     { name: t("links.home"), to: "/" },
     { name: t("links.categories"), to: "/categories" },
     { name: t("links.auctions"), to: "/auctions" },
-    { name: t("aboutUs"), to: "/aboutUs" },
+    { name: t("links.aboutUs"), to: "/aboutUs" },
   ];
 
   return (
     <>
-      <div className="bg-main-color h-[88px] flex justify-center items-center">
+      <div className="bg-main-color h-[70px] flex justify-center items-center">
         <div className="flex justify-between items-center gap-6 max-sm:gap-3 containerAK">
-          <Link to="/">
+          <Link to="/" className="flex items-center gap-2">
+            <img src={logo} alt="logo" className="w-[38px] shadow bg-black " />
             <h2 className="text-2xl font-bold text-white">{t("siteName")}</h2>
           </Link>
 
-          <input
-            className="h-[48px] w-full lg:w-[440px] px-4 rounded max-md:hidden"
-            type="search"
-            placeholder={t("searchPlaceholder")}
-          />
-
-          <div className="flex justify-center text-white items-center gap-2.5">
+          <div className="flex justify-center text-white items-center gap-3">
             <select
               className="bg-transparent"
               onChange={(e) => changeLanguage(e.target.value)}
@@ -55,20 +51,11 @@ const Navbar = () => {
                 {t("languages.german")}
               </option>
             </select>
-            <select className="bg-transparent max-md:hidden">
-              <option className="bg-[#1B6392]" value="USD">
-                {t("currency.usd")}
-              </option>
-              <option className="bg-[#1B6392]" value="EGP">
-                {t("currency.egp")}
-              </option>
-            </select>
-            <div className="flex items-center gap-2.5 max-md:hidden">
+            <div className="flex items-center gap-3 max-md:hidden">
               <CartFlot />
 
               <LoginFlot />
             </div>
-
             <button className="md:hidden mb-1" onClick={toggleDrawer}>
               <FiMenu className="w-8 h-8 text-white" />
             </button>
@@ -76,7 +63,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <nav className=" shadow  max-md:hidden">
+      <nav className=" shadow max-md:hidden">
         <div className="containerAK flex items-center justify-between py-2">
           <div className="flex items-center justify-between gap-8">
             {category.map((item, index) => (
@@ -110,14 +97,6 @@ const Navbar = () => {
           <div className="flex items-center justify-center gap-4">
             <CartFlot />
             <LoginFlot />
-            <select className="bg-transparent text-white">
-              <option className="bg-[#1B6392]" value="USD">
-                {t("currency.usd")}
-              </option>
-              <option className="bg-[#1B6392]" value="EGP">
-                {t("currency.egp")}
-              </option>
-            </select>
           </div>
 
           {/* Categories */}
