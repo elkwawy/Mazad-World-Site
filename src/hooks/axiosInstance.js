@@ -4,7 +4,7 @@ import Cookies from "js-cookie";
 
 const token = Cookies.get(path.token);
 const axiosInstance = axios.create({
-  baseURL: "http://127.0.0.1:8000/api",
+  baseURL: "https://auc.masar-soft.com/api",
 });
 
 axiosInstance.defaults.headers.get["Authorization"] = `Bearer ${token}`;

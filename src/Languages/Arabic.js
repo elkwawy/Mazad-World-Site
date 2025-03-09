@@ -14,6 +14,7 @@ export const Arabic = {
     auctions: "المزادات",
     aboutUs: "من نحن",
     contactUs: "اتصل بنا",
+    products: "منتجات",
   },
   all_categories: "جميع الفئات",
   aboutUs: "من نحن",

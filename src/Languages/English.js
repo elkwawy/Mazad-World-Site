@@ -13,6 +13,7 @@ export const English = {
     auctions: "Auctions",
     aboutUs: "About Us",
     contactUs: "Contact Us",
+    products: "Products",
   },
   all_categories: "All Categories",
   contactUs: "Contact Us",

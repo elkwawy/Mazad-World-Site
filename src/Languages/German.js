@@ -13,6 +13,7 @@ export const German = {
     auctions: "Auktionen",
     aboutUs: "Umsatz",
     contactUs: "Kontaktieren",
+    products: "Produkte",
   },
   all_categories: "Alle Kategorien",
   contactUs: "Kontaktieren",

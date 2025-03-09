@@ -1,4 +1,4 @@
-import BestDeals from "./components/BestDeals";
+import BestDeals from "../Products/HomeProducts";
 import CategoryGrid from "./components/CategoryGrid";
 import LatestNews from "./components/LatestNews";
 import MainSection from "./components/MainSection";

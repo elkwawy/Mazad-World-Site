@@ -11,7 +11,7 @@ import EmailVerification from "@/features/auth/pages/EmailVerification";
 import ContactUs from "@/features/contactUs/ContactUs";
 import Footer from "@/layouts/Footer";
 import CategoriesPage from "@/features/categories/CategoriesPage";
-import BestDealsPage from "@/features/bestDeals/BestDealsPage";
+import ProductsPage from "@/features/Products/ProductsPage";
 import AuctionsPage from "@/features/auctions/AuctionsPage";
 import NotFound from "@/staticPages/NotFound";
 import NewsDetails from "@/staticPages/NewsDetails";
@@ -42,7 +42,7 @@ function App() {
         <Route path="/EmailVerification" element={<EmailVerification />} />
         <Route path="/categories" element={<CategoriesPage />} />
         <Route path="/newsDetails/:id" element={<NewsDetails />} />
-        <Route path="/bestDeals" element={<BestDealsPage />} />
+        <Route path="/products" element={<ProductsPage />} />
         <Route path="/deal/:id" element={<DealDetails />} />
         <Route path="/auctions" element={<AuctionsPage />} />
         <Route path="/contactUs" element={<ContactUs />} />

@@ -1,9 +1,7 @@
-import { formatPrice } from '../../utils/formatters';
+import { formatPrice } from "../../../utils/formatters";
 
 export default function ProductPrice({ price, discount }) {
-  const discountedPrice = discount 
-    ? price - (price * discount / 100)
-    : price;
+  const discountedPrice = discount ? price - (price * discount) / 100 : price;
 
   return (
     <div className="flex items-center gap-2">

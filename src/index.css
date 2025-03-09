@@ -7,9 +7,11 @@
 
   --sec-color: #fa8232;
 
-  /* --main-color: #31111D;
+  /* 
+  --main-color: #31111D;
   --bMC: #5a2337;
-  --sec-color : #BE4646; */
+  --sec-color : #BE4646; 
+  */
 
   --hover-main-color: #411b29;
 
@@ -67,7 +69,7 @@ a {
     @apply transition-all duration-300;
   }
   .inputD {
-    @apply w-full h-[40px] px-3 text-sm rounded-md border focus:border-sec-color transition-all duration-300 ;
+    @apply w-full h-[40px] px-3 text-sm rounded-md border focus:border-sec-color transition-all duration-300;
   }
   .errorD {
     @apply border-red-600 focus:border-red-600;
@@ -75,13 +77,7 @@ a {
   .msgError {
     @apply text-red-500 bg-red-200 px-2 rounded text-sm;
   }
-
 }
-
-
-
-
-
 
 .myAK {
   margin: 60px 0;
@@ -127,7 +123,6 @@ a {
 
 .swiper-pagination-bullet-active {
   background: var(--sec-color) !important;
-
 }
 .swiper-button-next,
 .swiper-button-prev {

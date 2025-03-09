@@ -11,6 +11,40 @@ import "swiper/css/navigation";
 import { IoMdArrowRoundForward } from "react-icons/io";
 import playstation from "@/assets/Imgs/playstation.png";
 import useLocalization from "@/hooks/useLocalization";
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+
+const IntroSection = () => {
+  return (
+    <div className="bg-gray-100 py-6 px-10 max-lg:px-7 max-sm:px-4 rounded-lg relative overflow-hidden text-center">
+      <h2 className="text-3xl font-bold text-primary mb-4">Welcome to Mazad World</h2>
+      <p className="text-gray-700 max-w-2xl mx-auto leading-relaxed">
+        Mazad World is the leading online auction platform where you can find the best deals on electronics, watches, cars, antiques, fashion, and more.
+        Join the auctions, bid on your favorite items, and enjoy a unique shopping experience at unbeatable prices.
+      </p>
+
+      <p className="text-gray-600 mt-2">
+        Follow us and stay updated with the latest auctions!
+      </p>
+
+      {/* Social Media Icons */}
+      <div className="mt-2 flex justify-center gap-4">
+        <a href="https://facebook.com" target="_blank" className="text-blue-600 text-3xl hover:text-blue-800">
+          <FaFacebook />
+        </a>
+        <a href="https://twitter.com" target="_blank" className="text-blue-400 text-3xl hover:text-blue-600">
+          <FaTwitter />
+        </a>
+        <a href="https://instagram.com" target="_blank" className="text-pink-500 text-3xl hover:text-pink-700">
+          <FaInstagram />
+        </a>
+        <a href="https://linkedin.com" target="_blank" className="text-blue-700 text-3xl hover:text-blue-900">
+          <FaLinkedin />
+        </a>
+      </div>
+    </div>
+  );
+};
+
 const mainSection = () => {
   const { t, dir } = useLocalization();
 
@@ -118,27 +152,7 @@ const mainSection = () => {
         </Swiper>
 
         <div className="grid grid-rows-2 gap-6">
-          <div className="bg-gray-100 py-14 px-16 max-lg:px-7 max-sm:px-4 rounded-lg relative overflow-hidden">
-            <div className="flex justify-between items-center gap-2">
-              <div>
-                <span className="inline-block bg-gray-200 shadow text-sm px-3 py-1 rounded-full mb-2">
-                  {t("common.new")}
-                </span>
-                <h3 className="text-2xl font-bold mb-4">
-                  {t("products.rolex.title")}
-                </h3>
-                <button className="bg-secondary text-white px-6 py-2 max-lg:px-4 max-sm:px-3  rounded-full hover:bg-secondary/90 transition-colors">
-                  {t("buttons.shop_now")}{" "}
-                  <IoMdArrowRoundForward className="inline-block" />
-                </button>
-              </div>
-              <img
-                src="https://th.bing.com/th/id/OIP.Hvs899RreQjIuXS0gqAfcAAAAA?rs=1&pid=ImgDetMain"
-                alt="Google Pixel"
-                className="w-32  object-contain rounded-lg"
-              />
-            </div>
-          </div>
+          <IntroSection />
 
           <Swiper
             key={dir}

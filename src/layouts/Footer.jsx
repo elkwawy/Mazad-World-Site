@@ -1,5 +1,5 @@
 import { FiMail, FiPhone } from "react-icons/fi";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo2.png";
 import useLocalization from "@/hooks/useLocalization";
 function Footer() {
   const { t, dir } = useLocalization();
