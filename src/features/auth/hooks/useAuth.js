@@ -5,6 +5,7 @@ import { UserContext } from "@/context/UserProvider";
 import { path } from "@/constant/paths";
 import axiosInstance from "@/hooks/axiosInstance";
 import { showToast } from "@/utils/showToast";
+import { Toaster } from "react-hot-toast";
 
 const useAuthHook = () => {
   const navigate = useNavigate();

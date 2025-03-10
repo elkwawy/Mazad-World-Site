@@ -1,4 +1,4 @@
-import AuctionCarousel from "./auctions/AuctionCarousel";
+import AuctionCarousel from "../../auctions/components/AuctionCarousel";
 import SectionTitle from "@/components/ui/SectionTitle";
 import useaAuctionsHook from "@/features/auctions/useaAuctionsHook";
 import useLocalization from "@/hooks/useLocalization";
@@ -7,7 +7,7 @@ import { useEffect } from "react";
 export default function LiveAuctions() {
   const { t } = useLocalization();
   const { auctions, loading, FetchAuctions } = useaAuctionsHook();
-
+  
 
   useEffect(() => {
     FetchAuctions();

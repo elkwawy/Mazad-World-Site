@@ -18,6 +18,7 @@ import NewsDetails from "@/staticPages/NewsDetails";
 import AboutUs from "@/staticPages/AboutUs";
 import DealDetails from "@/components/DealDetails";
 import IdentityVerification from "@/features/auth/pages/IdentityVerification";
+import { Toaster } from "react-hot-toast";
 function App() {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -25,6 +26,7 @@ function App() {
   }, [pathname]);
   return (
     <div className="App">
+      <Toaster position="top-center" reverseOrder={false} />
       <Navbar />
       <Routes>
         <Route path="/" element={<LandingPage />} />

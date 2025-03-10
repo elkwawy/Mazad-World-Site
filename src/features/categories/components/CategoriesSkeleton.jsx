@@ -1,13 +1,16 @@
 import Skeleton from "react-loading-skeleton";
-
+import "react-loading-skeleton/dist/skeleton.css";
 const CategoriesSkeleton = () => {
   return (
-    <div
-     
-      className="flex flex-col items-center gap-3 bg-gray-100 p-3 rounded-md text-center"
-    >
-      <Skeleton width={100} height={100} className="rounded-md" />
-      <Skeleton width={80} height={20} />
+    <div className="flex justify-between items-center gap-2">
+      <div className="flex flex-col gap-4">
+        <Skeleton height={25} width={120} />
+        <Skeleton height={30} width={150} />
+        <Skeleton height={35} width={120} />
+      </div>
+      <div className="w-[176px] h-[176px] rounded-2xl overflow-hidden bg-gray-200 flex items-center justify-center">
+        <Skeleton width={184} height={184} />
+      </div>
     </div>
   );
 };

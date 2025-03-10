@@ -6,14 +6,13 @@ import "react-loading-skeleton/dist/skeleton.css";
 import defaultCategory from "@/assets/category.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCategories } from "./categoriesSlice";
-import CategoriesSkeleton from "./components/CategoriesSkeleton";
 
 export default function CategoriesPage() {
   const { t } = useTranslation();
 
   const dispatch = useDispatch();
   const { categories, status } = useSelector((state) => state.categories);
-
+  
   useEffect(() => {
     if (status === "idle") {
       dispatch(fetchCategories());
@@ -27,7 +26,15 @@ export default function CategoriesPage() {
       </h1>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
         {status === "loading"
-          ? [...Array(15)].map((_, index) => <CategoriesSkeleton key={index} />)
+          ? [...Array(15)].map((_, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center gap-3 bg-gray-100 p-3 rounded-md text-center"
+              >
+                <Skeleton width={100} height={100} className="rounded-md" />
+                <Skeleton width={80} height={20} />
+              </div>
+            ))
           : categories.map(({ id, name, photo }) => (
               <Link
                 key={id}

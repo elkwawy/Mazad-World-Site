@@ -1,17 +1,22 @@
 import useLocalization from "@/hooks/useLocalization";
 import AuctionCard from "@/components/AuctionCard";
-import useaAuctionsHook from "./useaAuctionsHook";
 import { useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css"; // لازم تستدعي الـ CSS 
+import "react-loading-skeleton/dist/skeleton.css";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchAuctions } from "./auctionsSlice";
 
 const AuctionsPage = () => {
-  const { auctions, loading, FetchAuctions } = useaAuctionsHook();
   const { t } = useLocalization();
 
+  const dispatch = useDispatch();
+  const { auctions, status } = useSelector((state) => state.auctions);
+  
   useEffect(() => {
-    FetchAuctions();
-  }, []);
+    if (status === "idle") {
+      dispatch(fetchAuctions());
+    }
+  }, [dispatch, status]);
 
   return (
     <div className="containerAK py-7 min-h-screen">
@@ -19,7 +24,7 @@ const AuctionsPage = () => {
         {t("links.auctions")}
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        {loading
+        {status === "loading"
           ? Array.from({ length: 6 }).map((_, index) => (
               <div key={index} className="p-4 border rounded-lg shadow-md">
                 <Skeleton height={200} className="mb-4" />

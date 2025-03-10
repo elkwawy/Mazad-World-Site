@@ -7,6 +7,7 @@ import "./Languages/i18n.js";
 import { UserProvider } from "./context/UserProvider";
 import { Provider } from "react-redux";
 import store from "@/redux/store";
+
 createRoot(document.getElementById("root")).render(
   // <StrictMode>
     <BrowserRouter>
