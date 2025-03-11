@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import useAuthHook from "../hooks/useAuth";
+import useAuthHook from "../hooks/useAuthHook";
 import Navgit from "../components/Navgit";
 import InputForm from "@/components/helpers/InputForm";
 import PasswordForm from "@/components/helpers/PasswordForm";

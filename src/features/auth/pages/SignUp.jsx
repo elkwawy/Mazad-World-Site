@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import useAuthHook from "../hooks/useAuth";
+import useAuthHook from "../hooks/useAuthHook";
 import Navgit from "../components/Navgit";
 import InputForm from "@/components/helpers/InputForm";
 import PasswordForm from "@/components/helpers/PasswordForm";
@@ -99,19 +99,12 @@ function SignUp() {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               condition={
-                formik.errors.password_confirmation && formik.touched.password_confirmation
+                formik.errors.password_confirmation &&
+                formik.touched.password_confirmation
               }
               errorMessage={formik.errors.password_confirmation}
               PasswordLight={formik.values.password_confirmation.length}
             />
-
-            <div className="flex gap-3 items-center">
-              <input type="checkbox" />
-              <div className="text-sm">
-                Are you agree to Clicon{" "}
-                <span className="text-main-color">Terms of Condition</span>
-              </div>
-            </div>
 
             <ButtonForm title="Sign Up" loading={loading} type="submit" />
           </form>

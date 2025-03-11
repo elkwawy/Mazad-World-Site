@@ -13,7 +13,6 @@ const Navbar = () => {
 
   console.log(location.pathname);
 
-  // تغيير اللغة وضبط اتجاه الصفحة
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
   };

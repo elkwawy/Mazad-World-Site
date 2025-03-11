@@ -17,7 +17,6 @@ export default function HomeProducts() {
   }, [dispatch, status]);
 
   return (
-    <section className="py-12">
       <div className="containerAK">
         <SectionTitle
           title={t("links.products")}
@@ -36,6 +35,5 @@ export default function HomeProducts() {
                 ))}
         </div>
       </div>
-    </section>
   );
 }

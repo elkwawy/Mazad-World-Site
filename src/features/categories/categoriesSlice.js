@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axiosInstance from "@/hooks/axiosInstance";
 
 export const fetchCategories = createAsyncThunk(
-  "products/fetchCategories",
+  "categories/fetchCategories",
   async (_, { rejectWithValue }) => {
     try {
       const response = await axiosInstance.get("v1/category/show");

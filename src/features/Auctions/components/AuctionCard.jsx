@@ -22,8 +22,8 @@ export default function AuctionCard({ auction }) {
     }).format(date);
   };
 
-  const handleShowDeal = (deal) => {
-    navigate(`/deal/${deal.id}`, { state: { deal } });
+  const handleShowDeal = (auction) => {
+    navigate(`/auction/${auction.id}`, { state: { auction } });
   };
 
   return (
@@ -60,7 +60,9 @@ export default function AuctionCard({ auction }) {
             </p>
           </div>
           <div className="text-right space-y-1">
-            <p className="text-sm text-gray-500">{formatDateTime(start_time)}</p>
+            <p className="text-sm text-gray-500">
+              {formatDateTime(start_time)}
+            </p>
             <button className="bg-secondary/10 text-secondary px-4 py-1 rounded-full text-sm hover:bg-secondary hover:text-white transition-colors">
               {t("auctions.bidNow")}
             </button>

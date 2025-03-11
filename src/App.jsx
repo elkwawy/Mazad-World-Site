@@ -14,11 +14,13 @@ import CategoriesPage from "@/features/categories/CategoriesPage";
 import ProductsPage from "@/features/Products/ProductsPage";
 import AuctionsPage from "@/features/auctions/AuctionsPage";
 import NotFound from "@/staticPages/NotFound";
-import NewsDetails from "@/staticPages/NewsDetails";
+import NewsDetails from "@/features/LatestNews/components/NewsDetails";
 import AboutUs from "@/staticPages/AboutUs";
 import DealDetails from "@/components/DealDetails";
 import IdentityVerification from "@/features/auth/pages/IdentityVerification";
 import { Toaster } from "react-hot-toast";
+import AuctionDetails from "./features/auctions/components/AuctionDetails";
+import ProductDetails from "./features/Products/components/ProductDetails";
 function App() {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -47,6 +49,9 @@ function App() {
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/deal/:id" element={<DealDetails />} />
         <Route path="/auctions" element={<AuctionsPage />} />
+        <Route path="/auctions" element={<AuctionsPage />} />
+        <Route path="/auction/:id" element={<AuctionDetails />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/contactUs" element={<ContactUs />} />
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="*" element={<NotFound />} />

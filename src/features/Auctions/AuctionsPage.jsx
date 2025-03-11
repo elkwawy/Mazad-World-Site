@@ -1,5 +1,5 @@
 import useLocalization from "@/hooks/useLocalization";
-import AuctionCard from "@/components/AuctionCard";
+import AuctionCard from "@/features/auctions/components/AuctionCard";
 import { useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -11,7 +11,7 @@ const AuctionsPage = () => {
 
   const dispatch = useDispatch();
   const { auctions, status } = useSelector((state) => state.auctions);
-  
+
   useEffect(() => {
     if (status === "idle") {
       dispatch(fetchAuctions());

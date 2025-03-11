@@ -15,15 +15,20 @@ const NewsDetails = () => {
       <div className="w-full h-full overflow-hidden rounded-lg shadow-md">
         <img
           src={newsData.image}
-          alt={t(newsData.titleKey)}
+          alt={t(newsData.title)}
           className="w-full h-full object-cover"
         />
       </div>
 
-      <p className="text-gray-500 text-sm mt-4">📅 {newsData.date}</p>
+      <p className="text-gray-500 text-sm mt-4">
+        📅 {newsData.date.slice(0, 10)}
+      </p>
 
       <p className="text-lg text-gray-700 mt-4 leading-relaxed">
-        {t(newsData.excerptKey)}
+        {t(newsData.title)}
+      </p>
+      <p className="text-lg text-gray-700 mt-4 leading-relaxed">
+        {t(newsData.description)}
       </p>
 
       <div className="mt-8">

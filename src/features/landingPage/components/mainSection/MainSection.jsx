@@ -6,7 +6,7 @@ const mainSection = () => {
   const { dir } = useLocalization();
 
   return (
-    <div className="containerAK py-8" dir={dir}>
+    <div className="containerAK" dir={dir}>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <AuctionsCarousel />
 

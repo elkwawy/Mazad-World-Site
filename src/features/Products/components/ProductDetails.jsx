@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { ImHammer2 } from "react-icons/im";
+import { useLocation } from "react-router-dom";
 
-const DealDetails = () => {
+const ProductDetails = () => {
   const deal = {
     name: "Luxury Villa",
     description:
@@ -17,7 +18,10 @@ const DealDetails = () => {
     auctionTime: "01:50:22",
   };
 
-  
+  const location = useLocation();
+  const productData = location.state?.product || null;
+
+  console.log(productData);
 
   const [mainImage, setMainImage] = useState(deal.images[0]);
 
@@ -50,19 +54,23 @@ const DealDetails = () => {
         </div>
 
         {/* Details Section */}
-        <h1 className="text-2xl font-bold text-gray-900 mt-4">{deal.name}</h1>
-        <p className="text-gray-600 mt-2">{deal.description}</p>
+        <h1 className="text-2xl font-bold text-gray-900 mt-4">
+          {productData.name}
+        </h1>
+        <p className="text-gray-600 mt-2">{productData.description}</p>
 
         {/* Pricing Section */}
         <div className="mt-4">
           <h2 className="text-lg font-semibold">More Details</h2>
           <p className="text-gray-700">
-            - Start Price:{" "}
-            <span className="font-bold text-green-600">${deal.startPrice}</span>
+            - Price:{" "}
+            <span className="font-bold text-green-600">
+              ${productData.price}
+            </span>
           </p>
           <p className="text-gray-700">
-            - Current Price:{" "}
-            <span className="font-bold text-red-500">${deal.currentPrice}</span>
+            - Stock:{" "}
+            <span className="font-bold text-red-500">${productData.stock}</span>
           </p>
         </div>
 
@@ -72,8 +80,10 @@ const DealDetails = () => {
             Auction Now
             <ImHammer2 />
           </button>
+
+          
           <span className="text-lg font-bold text-gray-900">
-            {deal.auctionTime}
+            {productData.end_time}
           </span>
         </div>
       </div>
@@ -81,4 +91,4 @@ const DealDetails = () => {
   );
 };
 
-export default DealDetails;
+export default ProductDetails;

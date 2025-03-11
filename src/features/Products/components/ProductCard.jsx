@@ -7,8 +7,8 @@ export default function ProductCard({ product }) {
   const { name, price, image, discount } = product;
 
   const navigate = useNavigate();
-  const handleShowDeal = (deal) => {
-    navigate(`/deal/${deal.id}`, { state: { deal } });
+  const handleShowDeal = (product) => {
+    navigate(`/product/${product.id}`, { state: { product } });
   };
 
   return (

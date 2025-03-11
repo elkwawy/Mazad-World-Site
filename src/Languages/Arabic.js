@@ -100,7 +100,7 @@ export const Arabic = {
   imageAltText: "مشكلة في الصورة",
   // Live Auctions
   auctions: {
-    title : "المزادات",
+    title: "المزادات",
     live_auctions: "المزادات الحية",
     bidNow: "المزايدة الآن",
     bids: "مزايدات",
@@ -190,17 +190,7 @@ export const Arabic = {
     phone: "الهاتف",
     email: "البريد الإلكتروني",
     quickLinks: "روابط سريعة",
-    categories: "التصنيفات",
-    aboutUs: "معلومات عنا",
-    contactUs: "تواصل معنا",
-    products: "المنتجات",
-    login: "تسجيل الدخول",
     topCategory: "أهم التصنيفات",
-    varieties: "التنوعات",
-    realEstate: "العقارات",
-    cars: "السيارات",
-    jewelry: "المجوهرات",
-    antiques: "التحف",
     newsletter: "النشرة الإخبارية",
     newsletterDescription:
       "اشترك في نشرتنا الإخبارية للحصول على تحديثات وعروض حصرية.",

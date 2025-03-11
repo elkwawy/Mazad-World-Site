@@ -1,42 +1,42 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axiosInstance from "@/hooks/axiosInstance";
 
-export const fetchAuctions = createAsyncThunk(
-  "auctions/fetchAuctions",
+export const fetchSellers = createAsyncThunk(
+  "sellers/fetchSellers",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axiosInstance.get("v1/auctions/show");
-      return response.data.auctions;
+      const response = await axiosInstance.get("v1/featured-sellers");
+      return response.data.data;
     } catch (error) {
       const errorMessage =
-        error?.response?.data?.message || "Auctions not found!";
+        error?.response?.data?.data || "Sellers not found!";
       return rejectWithValue(errorMessage);
     }
   }
 );
 
-const auctionsSlice = createSlice({
-  name: "auctions",
+const sellersSlice = createSlice({
+  name: "sellers",
   initialState: {
-    auctions: [],
+    sellers: [],
     status: "idle", // idle | loading | fulfilled | failed
     error: null,
   },
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchAuctions.pending, (state) => {
+      .addCase(fetchSellers.pending, (state) => {
         state.status = "loading";
       })
-      .addCase(fetchAuctions.fulfilled, (state, action) => {
+      .addCase(fetchSellers.fulfilled, (state, action) => {
         state.status = "fulfilled";
-        state.auctions = action.payload;
+        state.sellers = action.payload;
       })
-      .addCase(fetchAuctions.rejected, (state, action) => {
+      .addCase(fetchSellers.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.payload;
       });
   },
 });
 
-export default auctionsSlice.reducer;
+export default sellersSlice.reducer;

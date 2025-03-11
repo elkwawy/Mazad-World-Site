@@ -1,19 +1,19 @@
-import BestDeals from "../Products/HomeProducts";
-import CategoryGrid from "./components/CategoryGrid";
-import LatestNews from "./components/LatestNews";
 import MainSection from "./components/mainSection/MainSection";
-import LiveAuctions from "./components/LiveAuctions";
-import FeaturedSellers from "./components/FeaturedSellers";
-import FAQs from "./components/FAQs";
+import HomeProducts from "../Products/HomeProducts";
+import HomeLatestNews from "../LatestNews/HomeLatestNews";
+import HomeLiveAuctions from "../auctions/HomeLiveAuctions";
+import HomeSellers from "../sellers/HomeSellers";
+import HomeFAQs from "../faqs/HomeFAQs";
+import CategoryGrid from "./components/CategoryGrid";
 const LandingPage = () => {
   return (
-    <div>
+    <div className="space-y-20 mb-20 mt-[29px]">
       <MainSection />
-      <BestDeals />
-      <LiveAuctions />
-      <LatestNews />
-      <FeaturedSellers />
-      <FAQs />
+      <HomeProducts />
+      <HomeLiveAuctions />
+      <HomeLatestNews />
+      <HomeSellers />
+      <HomeFAQs />
     </div>
   );
 };
