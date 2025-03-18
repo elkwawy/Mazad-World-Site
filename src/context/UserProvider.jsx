@@ -3,6 +3,7 @@ import Cookies from "js-cookie";
 import { path } from "@/constant/paths";
 
 export const UserContext = createContext();
+
 export const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   console.log(user);

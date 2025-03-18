@@ -8,7 +8,7 @@ export default function AuctionCard({ auction }) {
   const navigate = useNavigate();
   const { t } = useLocalization();
 
-  const { title, image, current_price, start_time, end_time } = auction;
+  const { title, images, current_price, start_time, end_time } = auction;
 
   const formatDateTime = (dateTime) => {
     const date = new Date(dateTime);
@@ -25,14 +25,14 @@ export default function AuctionCard({ auction }) {
   const handleShowDeal = (auction) => {
     navigate(`/auction/${auction.id}`, { state: { auction } });
   };
+  console.log(images[0]);
 
   return (
     <div className="bg-[#f3f4f6] rounded-lg overflow-hidden shadow group">
       <div className="relative">
         <img
           src={
-            "https://th.bing.com/th/id/OIP.Uz8Ei04MjAOenca3DFHLFgHaE8?rs=1&pid=ImgDetMain" ||
-            image
+            images[0] 
           }
           alt={title}
           className="w-full h-48 object-cover"

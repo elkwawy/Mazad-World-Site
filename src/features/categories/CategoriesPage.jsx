@@ -39,14 +39,15 @@ export default function CategoriesPage() {
               <Link
                 key={id}
                 to={`/categories/${
-                  name.charAt(0).toLowerCase() + name.slice(1)
+                  id
+                  // name.charAt(0).toLowerCase() + name.slice(1)
                 }`}
                 className="flex flex-col items-center gap-3 bg-gray-100 p-4 rounded-md text-center hover:shadow-lg transition-shadow cursor-pointer group"
               >
                 <img
-                  src={defaultCategory}
-                  className="w-[100px] rounded-md"
-                  alt="img"
+                  src={photo}
+                  className="w-[100px] h-[100px] object-cover rounded-md"
+                  alt="category image"
                 />
                 <h3 className="text-gray-800 font-medium">{name}</h3>
               </Link>
