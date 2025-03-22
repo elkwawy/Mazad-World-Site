@@ -21,6 +21,7 @@ import IdentityVerification from "@/features/auth/pages/IdentityVerification";
 import { Toaster } from "react-hot-toast";
 import AuctionDetails from "./features/auctions/components/AuctionDetails";
 import ProductDetails from "./features/Products/components/ProductDetails";
+import ProductsCategory from "./features/categories/ProductsCategory";
 function App() {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -46,12 +47,12 @@ function App() {
         <Route path="/EmailVerification" element={<EmailVerification />} />
         <Route path="/categories" element={<CategoriesPage />} />
         <Route path="/newsDetails/:id" element={<NewsDetails />} />
-        <Route path="/products" element={<ProductsPage />} />
         <Route path="/deal/:id" element={<DealDetails />} />
         <Route path="/auctions" element={<AuctionsPage />} />
-        <Route path="/auctions" element={<AuctionsPage />} />
         <Route path="/auction/:id" element={<AuctionDetails />} />
+        <Route path="/products" element={<ProductsPage />} />
         <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/categories/:id" element={<ProductsCategory />} />
         <Route path="/contactUs" element={<ContactUs />} />
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="*" element={<NotFound />} />

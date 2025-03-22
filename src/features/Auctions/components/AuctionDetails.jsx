@@ -1,34 +1,86 @@
-import { useState } from "react";
+import { getAuctionStatus } from "@/utils/getAuctionStatus";
+import { useEffect, useState } from "react";
 import { ImHammer2 } from "react-icons/im";
 import { useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { auctionNow, showSingleAuction } from "../auctionsSlice";
+import Loader from "@/utils/Loader";
+import LoaderW from "@/utils/LoaderW";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const AuctionDetails = () => {
-  const deal = {
-    name: "Luxury Villa",
-    description:
-      "This is a beautiful luxury villa located in Beverly Hills. A perfect place to live in peace and comfort.",
-    images: [
-      "https://th.bing.com/th/id/R.d220dc959681d6b3de363982fa1a60ef?rik=WQtZnj1A286eQA&pid=ImgRaw&r=0",
-      "https://th.bing.com/th/id/OIP.O9nIGE4tMlRXgNs7GmFFLgHaE8?rs=1&pid=ImgDetMain",
-      "https://th.bing.com/th/id/R.1c20dc239e57799dad131c4f2690939c?rik=QIFnLk26Qjf7wQ&pid=ImgRaw&r=0",
-      "https://th.bing.com/th/id/OIP.TN5XXLzdjScXWizVct5JxwHaEk?rs=1&pid=ImgDetMain",
-    ],
-    startPrice: 150,
-    currentPrice: 195,
-    auctionTime: "01:50:22",
+  const location = useLocation();
+  const dispatch = useDispatch();
+  const auctionId = location.pathname.split("/")[2];
+
+  const {
+    singleAuction: auctionData,
+    singleStatus,
+    singleError,
+    bidStatus,
+    bidError,
+  } = useSelector((state) => state.auctions);
+
+  useEffect(() => {
+    dispatch(showSingleAuction(auctionId));
+  }, [dispatch, auctionId]);
+
+  const isAuctionActiveNow = () => {
+    if (!auctionData) return false;
+    const now = Date.now();
+    const startTime = new Date(auctionData?.start_time).getTime();
+    return now >= startTime;
   };
 
-  const location = useLocation();
-  const auctionData = location.state?.auction || null;
+  const { timeRemaining, formatTime } = getAuctionStatus(
+    auctionData?.start_time,
+    auctionData?.end_time
+  );
 
-  console.log(auctionData);
+  const [mainImage, setMainImage] = useState(null);
+  const [bidAmount, setBidAmount] = useState("");
+  const [error, setError] = useState("");
 
-  const [mainImage, setMainImage] = useState(deal.images[0]);
+  useEffect(() => {
+    if (auctionData?.images) {
+      setMainImage(auctionData?.images[0]);
+    }
+  }, [auctionData]);
+
+  const handleBid = () => {
+    if (!bidAmount || isNaN(bidAmount) || Number(bidAmount) <= 0) {
+      setError("Please enter a valid bid amount");
+      return;
+    }
+    setError("");
+    dispatch(auctionNow({ id: auctionData?.id, bid_amount: Number(bidAmount) }))
+      .unwrap()
+      .then(() => {
+        setBidAmount("");
+      });
+  };
+
+  if (singleStatus === "loading") {
+    return (
+      <div className="containerAK py-9">
+        <div className="bg-white max-w-4xl mx-auto">
+          <Skeleton height={280} className="w-full rounded-lg" />
+          <Skeleton height={30} width={200} className="mt-4" />
+          <Skeleton height={20} className="mt-2" count={3} />
+          <Skeleton height={50} width={150} className="mt-6" />
+        </div>
+      </div>
+    );
+  }
+
+  if (singleStatus === "failed") {
+    return <p className="text-center text-red-600">{singleError}</p>;
+  }
 
   return (
-    <div className="containerAK py-9 ">
-      <div className="bg-white  max-w-4xl mx-auto">
-        {/* Image Section */}
+    <div className="containerAK py-9">
+      <div className="bg-white max-w-4xl mx-auto">
         <div className="flex gap-4">
           <div className="w-3/4">
             <img
@@ -38,54 +90,94 @@ const AuctionDetails = () => {
             />
           </div>
           <div className="w-1/4 flex flex-col gap-2">
-            {deal.images.map(
-              (img, index) =>
-                img !== mainImage && (
-                  <img
-                    key={index}
-                    src={img}
-                    alt={`Sub ${index + 1}`}
-                    className="w-full h-[88px] object-cover rounded-lg cursor-pointer hover:opacity-80 transition"
-                    onClick={() => setMainImage(img)}
-                  />
-                )
-            )}
+            {auctionData?.images
+              ?.slice(0, 2)
+              .map(
+                (img, index) =>
+                  img !== mainImage && (
+                    <img
+                      key={index}
+                      src={img}
+                      alt={`Sub ${index + 1}`}
+                      className="w-full h-[88px] object-cover rounded-lg cursor-pointer hover:opacity-80 transition"
+                      onClick={() => setMainImage(img)}
+                    />
+                  )
+              )}
           </div>
         </div>
 
-        {/* Details Section */}
         <h1 className="text-2xl font-bold text-gray-900 mt-4">
-          {auctionData.title}
+          {auctionData?.title}
         </h1>
-        <p className="text-gray-600 mt-2">{auctionData.description}</p>
+        <p className="text-gray-600 mt-2">{auctionData?.description}</p>
 
-        {/* Pricing Section */}
         <div className="mt-4">
           <h2 className="text-lg font-semibold">More Details</h2>
-          <p className="text-gray-700">
-            - Start Price:{" "}
-            <span className="font-bold text-green-600">
-              ${auctionData.starting_price}
-            </span>
-          </p>
-          <p className="text-gray-700">
-            - Current Price:{" "}
-            <span className="font-bold text-red-500">
-              ${auctionData.current_price}
-            </span>
-          </p>
+          <div className="mt-2 flex justify-between sm:items-center max-sm:flex-col">
+            <p className="text-gray-700">
+              - Start Price:{" "}
+              <span className="font-bold text-gray-900">
+                ${auctionData?.starting_price}
+              </span>
+            </p>
+            <p className="text-gray-700">
+              - Start Time:{" "}
+              <span className="font-bold text-gray-900">
+                {auctionData?.start_time.slice(0, 10)}
+              </span>
+            </p>
+          </div>
+          <div className="mt-2 flex justify-between sm:items-center max-sm:flex-col">
+            <p className="text-gray-700">
+              - Current Price:{" "}
+              <span className="font-bold text-green-600">
+                ${auctionData?.current_price}
+              </span>
+            </p>
+            <p className="text-gray-700">
+              - End Time:{" "}
+              <span className="font-bold text-gray-900">
+                {auctionData?.end_time.slice(0, 10)}
+              </span>
+            </p>
+          </div>
         </div>
 
-        {/* Auction Timer & Button */}
-        <div className="flex items-center justify-between mt-6">
-          <button className="flex items-center gap-2 bg-orange-500 text-white px-4 py-2 rounded-md shadow-md hover:bg-orange-600 transition">
-            Auction Now
-            <ImHammer2 />
-          </button>
+        <div className="flex sm:items-center justify-between max-sm:flex-col-reverse gap-3 mt-6">
+          {isAuctionActiveNow() ? (
+            <div className="flex items-center gap-2">
+              <input
+                type="number"
+                value={bidAmount}
+                onChange={(e) => setBidAmount(e.target.value)}
+                placeholder="Bid Amount"
+                className="w-[180px] p-3 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-sec-color focus:outline-none"
+              />
+              <button
+                onClick={handleBid}
+                className="flex items-center gap-2 bg-orange-500 text-white px-4 py-2 rounded-md shadow-md hover:bg-orange-600 transition"
+              >
+                {bidStatus === "loading" ? (
+                  <LoaderW className="w-[24px]" />
+                ) : (
+                  <>
+                    Auction Now <ImHammer2 />
+                  </>
+                )}
+              </button>
+            </div>
+          ) : (
+            <p className="text-xl font-bold text-red-600">
+              Auction has not started
+            </p>
+          )}
+
           <span className="text-lg font-bold text-gray-900">
-            {auctionData.end_time}
+            {formatTime(timeRemaining)}
           </span>
         </div>
+        {error || <p className="text-red-600">{error}</p>}
       </div>
     </div>
   );

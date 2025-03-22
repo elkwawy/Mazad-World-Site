@@ -1,33 +1,39 @@
-import useLocalization from "@/hooks/useLocalization";
-import AuctionCard from "@/features/auctions/components/AuctionCard";
+import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchAuctions } from "./auctionsSlice";
+import { fetchProductsCategory } from "./categoriesSlice";
+import { useLocation } from "react-router-dom";
+import AuctionCard from "../auctions/components/AuctionCard";
+const ProductsCategory = () => {
+  const { t } = useTranslation();
+  const location = useLocation();
+  const id =location.pathname.split("/")[2];
+  const name = location.state?.name || null;
 
-const AuctionsPage = () => {
-  const { t } = useLocalization();
+  
+
+  
 
   const dispatch = useDispatch();
-  const { auctions, status } = useSelector((state) => state.auctions);
+  const { productsCategory, statusPC } = useSelector(
+    (state) => state.categories
+  );
+
+  console.log(productsCategory);
 
   useEffect(() => {
-    if (status === "idle") {
-      dispatch(fetchAuctions());
-    }
-  }, [dispatch, status]);
-
-  console.log(auctions);
-  
+    dispatch(fetchProductsCategory(id));
+  }, []);
 
   return (
     <div className="containerAK py-7 min-h-screen">
       <h1 className="text-4xl font-bold text-center mb-7">
-        {t("links.auctions")}
+        {t("links.auctions")} - {name}
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        {status === "loading"
+        {statusPC === "loading"
           ? Array.from({ length: 6 }).map((_, index) => (
               <div key={index} className="p-4 border rounded-lg shadow-md">
                 <Skeleton height={200} className="mb-4" />
@@ -35,7 +41,7 @@ const AuctionsPage = () => {
                 <Skeleton height={20} width="60%" />
               </div>
             ))
-          : auctions.map((auction) => (
+          : productsCategory.map((auction) => (
               <AuctionCard key={auction.id} auction={auction} />
             ))}
       </div>
@@ -43,4 +49,4 @@ const AuctionsPage = () => {
   );
 };
 
-export default AuctionsPage;
+export default ProductsCategory;

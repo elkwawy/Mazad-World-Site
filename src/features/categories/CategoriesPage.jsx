@@ -12,7 +12,7 @@ export default function CategoriesPage() {
 
   const dispatch = useDispatch();
   const { categories, status } = useSelector((state) => state.categories);
-  
+
   useEffect(() => {
     if (status === "idle") {
       dispatch(fetchCategories());
@@ -38,6 +38,7 @@ export default function CategoriesPage() {
           : categories.map(({ id, name, photo }) => (
               <Link
                 key={id}
+                state={{ name }}
                 to={`/categories/${
                   id
                   // name.charAt(0).toLowerCase() + name.slice(1)
