@@ -1,4 +1,3 @@
-import "./App.css";
 import { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Navbar from "@/layouts/Navbar";
@@ -32,6 +31,7 @@ function App() {
       <Toaster position="top-center" reverseOrder={false} />
       <Navbar />
       <Routes>
+      
         <Route path="/" element={<LandingPage />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />

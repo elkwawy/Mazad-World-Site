@@ -3,6 +3,8 @@ import axios from "axios";
 import Cookies from "js-cookie";
 
 const token = Cookies.get(path.token);
+console.log(token);
+
 const axiosInstance = axios.create({
   baseURL: "https://auc.masar-soft.com/api",
 });

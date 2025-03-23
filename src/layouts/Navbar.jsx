@@ -6,6 +6,8 @@ import useLocalization from "@/hooks/useLocalization";
 import { BsFillTelephoneForwardFill } from "react-icons/bs";
 import CartFlot from "@/features/cart/components/CartFlot";
 import logo from "@/assets/logo.png";
+import useAuthHook from "@/features/auth/hooks/useAuthHook";
+import elkwawy from "@/assets/Imgs/elkwawy.png";
 const Navbar = () => {
   const location = useLocation();
   const { t, i18n } = useLocalization();
@@ -29,6 +31,9 @@ const Navbar = () => {
     { name: t("links.aboutUs"), to: "/aboutUs" },
   ];
 
+  const { handleLogout, user, isAuthenticated } = useAuthHook();
+  const [isOpenLogout, setIsOpenLogout] = useState(false);
+
   return (
     <>
       <div className="bg-main-color h-[70px] flex justify-center items-center">
@@ -40,7 +45,7 @@ const Navbar = () => {
 
           <div className="flex justify-center text-white items-center gap-3">
             <select
-              className="bg-transparent"
+              className="bg-transparent cursor-pointer"
               onChange={(e) => changeLanguage(e.target.value)}
               defaultValue={i18n.language}
             >
@@ -55,9 +60,38 @@ const Navbar = () => {
               </option>
             </select>
             <div className="flex items-center gap-3 max-md:hidden">
+              {/*
               <CartFlot />
+              */}
+              {isAuthenticated ? (
+                <>
+                  <div
+                    onClick={() => setIsOpenLogout(!isOpenLogout)}
+                    className="flex items-center gap-4 cursor-pointer group"
+                  >
+                    <h3 className="text-white">{user?.user?.name}</h3>
+                    <img
+                      src={elkwawy}
+                      className="w-10 h-10 rounded-full cursor-pointer"
+                      alt="user image"
+                    />
+                  </div>
 
-              <LoginFlot />
+                  <button
+                    onClick={() => {
+                      handleLogout();
+                      setIsOpenLogout(false);
+                    }}
+                    className={`bg-sec-color text-whit z-40 w-[180px] px-3.5 py-1.5 rounded-md absolute top-[71.8px] trans right-[100px]
+                      ${isOpenLogout ? " right-[6.5%]" : " right-[-200px]"}
+                      `}
+                  >
+                    {t("logout")}
+                  </button>
+                </>
+              ) : (
+                <LoginFlot />
+              )}
             </div>
             <button className="md:hidden mb-1" onClick={toggleDrawer}>
               <FiMenu className="w-8 h-8 text-white" />

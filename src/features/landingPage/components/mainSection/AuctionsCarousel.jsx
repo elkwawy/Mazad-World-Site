@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { ImHammer2 } from "react-icons/im";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { Link } from "react-router-dom";
 
 const AuctionsCarousel = () => {
   const { t, dir } = useLocalization();
@@ -71,15 +72,15 @@ const AuctionsCarousel = () => {
                 <p className="text-gray-600 mb-6 max-w-md">
                   {auction.description}
                 </p>
-                <button className="bg-secondary text-white px-8 py-3 rounded-full hover:bg-secondary/90 transition-colors">
+                <Link to={`/auction/${auction.id}`} className="bg-secondary text-white px-8 py-3 rounded-full hover:bg-secondary/90 transition-colors">
                   Auction now
                   <ImHammer2 className="inline-block ml-1.5 rotate-90" />
-                </button>
+                </Link>
                 <div className="mt-8">
                   <img
-                    src={auction.image}
+                    src={auction.images[0]}
                     alt="Auction Image"
-                    className="max-w-full rounded-2xl -m-4 float-end h-[210px] object-cover"
+                    className="max-w-full rounded-2xl -m-4 float-end w-[250px] h-[260px] object-cover"
                   />
                 </div>
               </div>

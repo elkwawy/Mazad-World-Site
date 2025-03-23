@@ -5,6 +5,7 @@ import ProductSkeleton from "./components/ProductSkeleton";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchProducts } from "./productsSlice";
+import EmptyPage from "@/staticPages/EmptyPage";
 export default function ProductsPage() {
   const { t } = useTranslation();
 
@@ -14,7 +15,7 @@ export default function ProductsPage() {
     if (status === "idle") {
       dispatch(fetchProducts());
     }
-  }, [dispatch, status]); 
+  }, [dispatch, status]);
 
   return (
     <div className="containerAK py-7 min-h-screen">
@@ -22,13 +23,17 @@ export default function ProductsPage() {
         {t("links.products")}
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {status === "loading"
-          ? Array.from({ length: 8 }).map((_, index) => (
-              <ProductSkeleton key={index} />
-            ))
-          : products.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
+        {status === "loading" ? (
+          Array.from({ length: 8 }).map((_, index) => (
+            <ProductSkeleton key={index} />
+          ))
+        ) : products.length > 0 ? (
+          products.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))
+        ) : (
+          <EmptyPage name="Products" />
+        )}
       </div>
     </div>
   );

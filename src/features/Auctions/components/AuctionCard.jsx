@@ -30,7 +30,7 @@ export default function AuctionCard({ auction }) {
         onClick={isAuctionActive ? handleShowDeal : null}
         className={`relative ${isAuctionActive && "cursor-pointer"}`}
       >
-        <img src={images[0]} alt={title} className="w-full h-48 object-cover" />
+        <img src={images[0] } alt={title} className="w-full h-48 object-cover" />
         {isAuctionActive && (
           <div className="absolute bottom-4 left-4 bg-white px-3 py-1 rounded-full text-sm font-medium flex items-center">
             <FiClock className="mr-1 text-gray-600" />

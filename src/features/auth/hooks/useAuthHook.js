@@ -74,11 +74,20 @@ const useAuthHook = () => {
   const handleLogout = () => {
     Cookies.remove(path.token);
     Cookies.remove(path.user);
-    navigate(`/${path.main}/authentication`);
-    message.success("Logout successful!");
+    navigate(`/`);
+    showToast("success", "Logout successful!");
   };
 
-  return { handleLogin, handleSignup, handleLogout, loading, user };
+  const isAuthenticated = Cookies.get(path.token);
+
+  return {
+    handleLogin,
+    handleSignup,
+    handleLogout,
+    loading,
+    user,
+    isAuthenticated,
+  };
 };
 
 export default useAuthHook;

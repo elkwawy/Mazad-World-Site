@@ -22,21 +22,30 @@ export default function AuctionCarousel({ auctions, status }) {
       }}
       className="auction-swiper"
     >
-      {status === "loading"
-        ? Array.from({ length: 4 }).map((_, index) => (
-            <SwiperSlide key={index}>
-              <div key={index} className="p-4 border rounded-lg shadow-md">
-                <Skeleton height={200} className="mb-4" />
-                <Skeleton height={20} width="80%" className="mb-2" />
-                <Skeleton height={20} width="60%" />
-              </div>
-            </SwiperSlide>
-          ))
-        : auctions.slice(0, 4).map((auction) => (
-            <SwiperSlide key={auction.id}>
-              <AuctionCard auction={auction} />
-            </SwiperSlide>
-          ))}
+      {status === "loading" ? (
+        Array.from({ length: 4 }).map((_, index) => (
+          <SwiperSlide key={index}>
+            <div key={index} className="p-4 border rounded-lg shadow-md">
+              <Skeleton height={200} className="mb-4" />
+              <Skeleton height={20} width="80%" className="mb-2" />
+              <Skeleton height={20} width="60%" />
+            </div>
+          </SwiperSlide>
+        ))
+      ) : auctions.length > 0 ? (
+        auctions.slice(0, 4).map((auction) => (
+          <SwiperSlide key={auction.id}>
+            <AuctionCard auction={auction} />
+          </SwiperSlide>
+        ))
+      ) : (
+        <div className="col-span-6">
+          <p className="text-md text-gray-500 mt-2">
+            Sorry, there are no auctions available at the moment. Please check
+            back later.
+          </p>
+        </div>
+      )}
     </Swiper>
   );
 }

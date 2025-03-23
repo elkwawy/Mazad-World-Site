@@ -17,23 +17,32 @@ export default function HomeProducts() {
   }, [dispatch, status]);
 
   return (
-      <div className="containerAK">
-        <SectionTitle
-          title={t("links.products")}
-          viewAll={t("viewAllButton")}
-          to="/products"
-        />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
-          {status === "loading"
-            ? Array.from({ length: 4 }).map((_, index) => (
-                <ProductSkeleton key={index} />
-              ))
-            : products
-                .slice(0, 4)
-                .map((product) => (
-                  <ProductCard key={product.id} product={product} />
-                ))}
-        </div>
+    <div className="containerAK">
+      <SectionTitle
+        title={t("links.products")}
+        viewAll={t("viewAllButton")}
+        to="/products"
+      />
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
+        {status === "loading" ? (
+          Array.from({ length: 4 }).map((_, index) => (
+            <ProductSkeleton key={index} />
+          ))
+        ) : products.length > 0 ? (
+          products
+            .slice(0, 4)
+            .map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))
+        ) : (
+          <div className="col-span-6">
+            <p className="text-md text-gray-500 mt-2">
+              Sorry, there are no Products available at the moment. Please check
+              back later.
+            </p>
+          </div>
+        )}
       </div>
+    </div>
   );
 }
