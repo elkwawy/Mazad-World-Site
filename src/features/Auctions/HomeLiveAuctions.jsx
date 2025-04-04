@@ -11,7 +11,7 @@ export default function HomeLiveAuctions() {
   return (
     <div className="containerAK">
       <SectionTitle
-        title={t("auctions.live_auctions")}
+        title={t("links.auctions")}
         viewAll={t("auctions.view_all")}
         to={"/auctions"}
       />

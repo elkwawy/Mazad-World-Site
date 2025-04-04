@@ -64,11 +64,12 @@ const AuctionDetails = () => {
   if (singleStatus === "loading") {
     return (
       <div className="containerAK py-9">
-        <div className="bg-white max-w-4xl mx-auto">
+        <div className="bg-white min-h-[75vh] max-w-4xl mx-auto">
           <Skeleton height={280} className="w-full rounded-lg" />
-          <Skeleton height={30} width={200} className="mt-4" />
+          <Skeleton height={30} width={200} className="mt-5" />
+          <Skeleton height={25} className="mt-2 mb-3" width={250} />
           <Skeleton height={20} className="mt-2" count={3} />
-          <Skeleton height={50} width={150} className="mt-6" />
+          <Skeleton height={40} width={150} className="mt-6" />
         </div>
       </div>
     );
@@ -81,6 +82,7 @@ const AuctionDetails = () => {
   return (
     <div className="containerAK py-9">
       <div className="bg-white max-w-4xl mx-auto">
+        {/* Images  */}
         <div className="flex gap-4">
           <div className="w-3/4">
             <img
@@ -106,12 +108,12 @@ const AuctionDetails = () => {
               )}
           </div>
         </div>
-
+        {/* Details */}
         <h1 className="text-2xl font-bold text-gray-900 mt-4">
           {auctionData?.title}
         </h1>
         <p className="text-gray-600 mt-2">{auctionData?.description}</p>
-
+        {/* More Details */}
         <div className="mt-4">
           <h2 className="text-lg font-semibold">More Details</h2>
           <div className="mt-2 flex justify-between sm:items-center max-sm:flex-col">
@@ -124,7 +126,7 @@ const AuctionDetails = () => {
             <p className="text-gray-700">
               - Start Time:{" "}
               <span className="font-bold text-gray-900">
-                {auctionData?.start_time.slice(0, 10)}
+                {auctionData?.start_time}
               </span>
             </p>
           </div>
@@ -138,7 +140,7 @@ const AuctionDetails = () => {
             <p className="text-gray-700">
               - End Time:{" "}
               <span className="font-bold text-gray-900">
-                {auctionData?.end_time.slice(0, 10)}
+                {auctionData?.end_time}
               </span>
             </p>
           </div>
@@ -172,10 +174,11 @@ const AuctionDetails = () => {
               Auction has not started
             </p>
           )}
-
-          <span className="text-lg font-bold text-gray-900">
-            {formatTime(timeRemaining)}
-          </span>
+          {isAuctionActiveNow() && (
+            <span className="text-lg font-bold text-gray-900">
+              {formatTime(timeRemaining)}
+            </span>
+          )}
         </div>
         {error || <p className="text-red-600">{error}</p>}
       </div>

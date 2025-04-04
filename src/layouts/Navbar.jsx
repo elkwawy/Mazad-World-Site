@@ -34,6 +34,9 @@ const Navbar = () => {
   const { handleLogout, user, isAuthenticated } = useAuthHook();
   const [isOpenLogout, setIsOpenLogout] = useState(false);
 
+  console.log(isOpenLogout);
+  
+
   return (
     <>
       <div className="bg-main-color h-[70px] flex justify-center items-center">
@@ -82,7 +85,7 @@ const Navbar = () => {
                       handleLogout();
                       setIsOpenLogout(false);
                     }}
-                    className={`bg-sec-color text-whit z-40 w-[180px] px-3.5 py-1.5 rounded-md absolute top-[71.8px] trans right-[100px]
+                    className={`bg-sec-color text-whit z-40 w-[180px] px-3.5 py-1.5 rounded-md absolute top-[71.8px] trans
                       ${isOpenLogout ? " right-[6.5%]" : " right-[-200px]"}
                       `}
                   >
