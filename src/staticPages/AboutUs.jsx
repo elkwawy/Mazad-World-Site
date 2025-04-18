@@ -15,7 +15,7 @@ export default function AboutUs() {
         </div>
       </div>
 
-      {/* Stats Section */}
+      {/* Stats Section */}+
       <div className="containerAK py-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div className="text-center">

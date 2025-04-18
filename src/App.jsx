@@ -10,7 +10,7 @@ import EmailVerification from "@/features/auth/pages/EmailVerification";
 import ContactUs from "@/features/contactUs/ContactUs";
 import Footer from "@/layouts/Footer";
 import CategoriesPage from "@/features/categories/CategoriesPage";
-import ProductsPage from "@/features/Products/ProductsPage";
+
 import AuctionsPage from "@/features/auctions/AuctionsPage";
 import NotFound from "@/staticPages/NotFound";
 import NewsDetails from "@/features/LatestNews/components/NewsDetails";
@@ -19,19 +19,27 @@ import DealDetails from "@/components/DealDetails";
 import IdentityVerification from "@/features/auth/pages/IdentityVerification";
 import { Toaster } from "react-hot-toast";
 import AuctionDetails from "./features/auctions/components/AuctionDetails";
-import ProductDetails from "./features/Products/components/ProductDetails";
-import ProductsCategory from "./features/categories/ProductsCategory";
+import AuctionsCategory from "./features/categories/AuctionsCategory";
+import { fetchCategories } from "./features/categories/categoriesSlice";
+import { useDispatch, useSelector } from "react-redux";
 function App() {
   const { pathname } = useLocation();
+  const dispatch = useDispatch();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+
+  const { status: statusCategories } = useSelector((state) => state.categories);
+  useEffect(() => {
+    if (statusCategories === "idle") {
+      dispatch(fetchCategories());
+    }
+  }, [dispatch, statusCategories]);
   return (
     <div className="App">
       <Toaster position="top-center" reverseOrder={false} />
       <Navbar />
       <Routes>
-      
         <Route path="/" element={<LandingPage />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
@@ -50,9 +58,8 @@ function App() {
         <Route path="/deal/:id" element={<DealDetails />} />
         <Route path="/auctions" element={<AuctionsPage />} />
         <Route path="/auction/:id" element={<AuctionDetails />} />
-        <Route path="/products" element={<ProductsPage />} />
-        <Route path="/product/:id" element={<ProductDetails />} />
-        <Route path="/categories/:id" element={<ProductsCategory />} />
+
+        <Route path="/categories/:id" element={<AuctionsCategory />} />
         <Route path="/contactUs" element={<ContactUs />} />
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="*" element={<NotFound />} />

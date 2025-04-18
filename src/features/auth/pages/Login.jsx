@@ -54,6 +54,7 @@ function Login() {
               labelName="Email"
               type="text"
               name="email"
+              -+-*
               value={formik.values.email}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}

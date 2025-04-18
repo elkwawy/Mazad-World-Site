@@ -19,11 +19,11 @@ const HomeCategories = () => {
   const { categories, status } = useSelector((state) => state.categories);
   console.log(categories);
 
-  useEffect(() => {
-    if (status === "idle") {
-      dispatch(fetchCategories());
-    }
-  }, [dispatch, status]);
+  // useEffect(() => {
+  //   if (status === "idle") {
+  //     dispatch(fetchCategories());
+  //   }
+  // }, [dispatch, status]);
 
   return (
     <Swiper

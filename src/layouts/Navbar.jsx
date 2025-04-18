@@ -4,7 +4,6 @@ import { Link, useLocation } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
 import useLocalization from "@/hooks/useLocalization";
 import { BsFillTelephoneForwardFill } from "react-icons/bs";
-import CartFlot from "@/features/cart/components/CartFlot";
 import logo from "@/assets/logo.png";
 import useAuthHook from "@/features/auth/hooks/useAuthHook";
 import elkwawy from "@/assets/Imgs/elkwawy.png";
@@ -27,7 +26,6 @@ const Navbar = () => {
     { name: t("links.home"), to: "/" },
     { name: t("links.categories"), to: "/categories" },
     { name: t("links.auctions"), to: "/auctions" },
-    { name: t("links.products"), to: "/products" },
     { name: t("links.aboutUs"), to: "/aboutUs" },
   ];
 
@@ -35,7 +33,6 @@ const Navbar = () => {
   const [isOpenLogout, setIsOpenLogout] = useState(false);
 
   console.log(isOpenLogout);
-  
 
   return (
     <>
@@ -138,17 +135,37 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="flex flex-col gap-5 p-6 md:hidden bg-[#1B6392] shadow-lg border-t border-[#427ea6]">
-          {/* Search Input */}
-          <input
-            className="w-full h-[48px] px-4 text-sm  transition-all duration-300 pace-x-2 border border-gray-300 rounded-lg"
-            type="search"
-            placeholder="Search..."
-          />
-
           {/*  Icons */}
-          <div className="flex items-center justify-center gap-4">
-            <CartFlot />
-            <LoginFlot />
+          <div className="flex mt-4 items-center justify-center gap-4">
+            {isAuthenticated ? (
+              <>
+                <div
+                  onClick={() => setIsOpenLogout(!isOpenLogout)}
+                  className="flex items-center gap-4 cursor-pointer group"
+                >
+                  <h3 className="text-white">{user?.user?.name}</h3>
+                  <img
+                    src={elkwawy}
+                    className="w-10 h-10 rounded-full cursor-pointer"
+                    alt="user image"
+                  />
+                </div>
+
+                <button
+                  onClick={() => {
+                    handleLogout();
+                    setIsOpenLogout(false);
+                  }}
+                  className={`bg-sec-color text-whit z-40 w-[180px] px-3.5 py-1.5 rounded-md absolute top-[71.8px] trans
+                  ${isOpenLogout ? " right-[6.5%]" : " right-[-200px]"}
+                  `}
+                >
+                  {t("logout")}
+                </button>
+              </>
+            ) : (
+              <LoginFlot />
+            )}
           </div>
 
           {/* Categories */}

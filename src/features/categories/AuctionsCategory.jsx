@@ -6,15 +6,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchProductsCategory } from "./categoriesSlice";
 import { useLocation } from "react-router-dom";
 import AuctionCard from "../auctions/components/AuctionCard";
-const ProductsCategory = () => {
+const AuctionsCategory = () => {
   const { t } = useTranslation();
   const location = useLocation();
-  const id =location.pathname.split("/")[2];
+  const id = location.pathname.split("/")[2];
   const name = location.state?.name || null;
-
-  
-
-  
 
   const dispatch = useDispatch();
   const { productsCategory, statusPC } = useSelector(
@@ -49,4 +45,4 @@ const ProductsCategory = () => {
   );
 };
 
-export default ProductsCategory;
+export default AuctionsCategory;

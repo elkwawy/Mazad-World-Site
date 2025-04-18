@@ -191,11 +191,9 @@ export const Arabic = {
     email: "البريد الإلكتروني",
     quickLinks: "روابط سريعة",
     topCategory: "أهم التصنيفات",
-    newsletter: "النشرة الإخبارية",
-    newsletterDescription:
-      "اشترك في نشرتنا الإخبارية للحصول على تحديثات وعروض حصرية.",
-    emailPlaceholder: "بريدك الإلكتروني",
-    subscribe: "اشترك",
+
     rights: "© جميع الحقوق محفوظة 2024. تصميم فريق التنين",
+      "followUs": "تابعنا",
+  "followUsDescription": "تابعنا على منصات التواصل الاجتماعي لتصلك كل جديد."
   },
 };

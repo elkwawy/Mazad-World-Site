@@ -197,11 +197,9 @@ export const German = {
     email: "E-Mail",
     quickLinks: "Schnellzugriff",
     topCategory: "Top Kategorien",
-    newsletter: "Newsletter",
-    newsletterDescription:
-      "Abonnieren Sie unseren Newsletter für regelmäßige Updates und exklusive Angebote.",
-    emailPlaceholder: "Ihre E-Mail",
-    subscribe: "Abonnieren",
     rights: "© Alle Rechte vorbehalten 2024. Design von DragonTeam",
+    followUs: "Folgen Sie uns",
+    followUsDescription:
+      "Folgen Sie uns in den sozialen Medien, um auf dem Laufenden zu bleiben.",
   },
 };

@@ -4,7 +4,8 @@ import useLocalization from "@/hooks/useLocalization";
 import { useSelector } from "react-redux";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-
+import { Link } from "react-router-dom";
+import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 function Footer() {
   const { t, dir } = useLocalization();
 
@@ -12,7 +13,6 @@ function Footer() {
     { name: t("links.home"), to: "/" },
     { name: t("links.categories"), to: "/categories" },
     { name: t("links.auctions"), to: "/auctions" },
-    { name: t("links.products"), to: "/products" },
     { name: t("links.aboutUs"), to: "/aboutUs" },
     { name: t("links.contactUs"), to: "/contactUs" },
   ];
@@ -75,7 +75,7 @@ function Footer() {
                       <Skeleton width="80%" height={16} />
                     </li>
                   ))
-                : categories.slice(0, 6).map((category) => (
+                : categories.slice(0, 5).map((category) => (
                     <li key={category.id}>
                       <a
                         href={`/categories/${category.id}`}
@@ -88,27 +88,41 @@ function Footer() {
             </ul>
           </div>
 
-          {/* Newsletter */}
+          {/* Follow Us on Social Media */}
           <div>
             <h4 className="text-white font-semibold mb-4">
-              {t("footer.newsletter")}
+              {t("footer.followUs")}
             </h4>
-            <p className="text-sm mb-4">{t("footer.newsletterDescription")}</p>
-            <div className="flex">
-              <input
-                type="email"
-                placeholder={t("footer.emailPlaceholder")}
-                className={`px-4 py-2 text-gray-800 w-full ${
-                  dir === "rtl" ? "rounded-r" : "rounded-l"
-                }`}
-              />
-              <button
-                className={`bg-secondary px-4 py-2 ${
-                  dir === "rtl" ? "rounded-l" : "rounded-r"
-                } text-white`}
+            <p className="text-sm mb-4">{t("footer.followUsDescription")}</p>
+            <div className="flex gap-4 text-3xl">
+              <Link
+                to="https://www.facebook.com"
+                target="_blank"
+                aria-label="Facebook"
               >
-                {t("footer.subscribe")}
-              </button>
+                <FaFacebookF className="text-gray-400 hover:text-secondary transition" />
+              </Link>
+              <Link
+                to="https://www.twitter.com"
+                target="_blank"
+                aria-label="Twitter"
+              >
+                <FaTwitter className="text-gray-400 hover:text-secondary transition" />
+              </Link>
+              <Link
+                to="https://www.youtube.com"
+                target="_blank"
+                aria-label="YouTube"
+              >
+                <FaYoutube className="text-gray-400 hover:text-secondary transition" />
+              </Link>
+              <Link
+                to="https://www.instagram.com"
+                target="_blank"
+                aria-label="Instagram"
+              >
+                <FaInstagram className="text-gray-400 hover:text-secondary transition" />
+              </Link>
             </div>
           </div>
         </div>

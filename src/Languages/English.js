@@ -102,7 +102,7 @@ export const English = {
   imageAltText: "Problem with the image",
   // Live Auctions
   auctions: {
-    title : "Auctions",
+    title: "Auctions",
     bidNow: "Bid Now",
     bids: "bids",
     currentBid: "Current Bid",
@@ -192,11 +192,8 @@ export const English = {
     email: "Email",
     quickLinks: "Quick Links",
     topCategory: "Top Category",
-    newsletter: "Newsletter",
-    newsletterDescription:
-      "Subscribe to our newsletter for regular updates and exclusive offers.",
-    emailPlaceholder: "Your email",
-    subscribe: "Subscribe",
     rights: "All rights reserved to © 2024. Design by DragonTeam",
+    followUs: "Follow Us",
+    followUsDescription: "Stay connected with us on social media platforms.",
   },
 };
