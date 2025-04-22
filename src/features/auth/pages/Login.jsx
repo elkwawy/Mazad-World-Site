@@ -54,7 +54,6 @@ function Login() {
               labelName="Email"
               type="text"
               name="email"
-              -+-*
               value={formik.values.email}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -75,12 +74,14 @@ function Login() {
               PasswordLight={formik.values.password.length}
             />
 
-            <Link
+            {/*
+              <Link
               to="/login/forgetPassword"
               className="text-[#2DA5F3] font-medium -ml-3 text-sm max-md:ml-10"
-            >
+              >
               Forget Password
-            </Link>
+              </Link>
+              */}
 
             <ButtonForm title="Sign In" loading={loading} type="submit" />
           </form>

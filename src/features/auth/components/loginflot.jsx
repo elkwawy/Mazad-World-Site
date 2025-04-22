@@ -87,12 +87,14 @@ const LoginFlot = () => {
               condition={formik.errors.password && formik.touched.password}
               errorMessage={formik.errors.password}
             />
-            <Link
-              to="/login/forgetPassword"
-              className="text-[#2DA5F3] ml-auto font-medium text-sm"
-            >
-              Forget Password
-            </Link>
+            {/*
+              <Link
+                to="/login/forgetPassword"
+                className="text-[#2DA5F3] ml-auto font-medium text-sm"
+              >
+                Forget Password
+              </Link>
+              */}
             <ButtonForm title="LOGIN" loading={loading} type="submit" />
           </form>
           <div className="flex justify-center mt-3 mr-8">
@@ -103,7 +105,7 @@ const LoginFlot = () => {
               onClick={toggleMenu}
               className="bg-white trans hover:border-[#FA8232] rounded-md mt-3 h-[48px] max-md:w-[277px] w-[360px] flex justify-center items-center gap-2 text-sm font-semibold text-[#FA8232] border-[#FFE7D6] border shadow-[#FFE7D6] "
             >
-              CREATE ACCOUNT 
+              CREATE ACCOUNT
             </button>
           </Link>
         </div>

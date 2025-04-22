@@ -8,7 +8,7 @@ import LoaderW from "@/utils/LoaderW";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import AuctionModal from "./AuctionModal";
-import { IoLockClosedOutline } from "react-icons/io5"; // أيقونة لو المزاد لم يبدأ
+import { IoLockClosedOutline } from "react-icons/io5";
 
 const AuctionDetails = () => {
   const location = useLocation();
@@ -25,7 +25,8 @@ const AuctionDetails = () => {
   } = useSelector((state) => state.auctions);
 
   useEffect(() => {
-    dispatch(showSingleAuction(auctionId));
+      dispatch(showSingleAuction(auctionId));
+    // console.log(auctionData);
   }, [dispatch, auctionId]);
 
   const {
@@ -164,7 +165,12 @@ const AuctionDetails = () => {
           {error || <p className="text-red-600">{error}</p>}
         </div>
       </div>
-      <AuctionModal isOpen={showModal} onClose={() => setShowModal(false)} />
+      <AuctionModal
+        id={auctionId}
+        auctionData={auctionData}
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+      />
     </>
   );
 };

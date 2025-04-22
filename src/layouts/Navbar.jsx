@@ -44,6 +44,8 @@ const Navbar = () => {
           </Link>
 
           <div className="flex justify-center text-white items-center gap-3">
+            {/* 
+
             <select
               className="bg-transparent cursor-pointer"
               onChange={(e) => changeLanguage(e.target.value)}
@@ -59,6 +61,7 @@ const Navbar = () => {
                 {t("languages.german")}
               </option>
             </select>
+            */}
             <div className="flex items-center gap-3 max-md:hidden">
               {/*
               <CartFlot />

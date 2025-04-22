@@ -45,11 +45,7 @@ export const auctionNow = createAsyncThunk(
       );
       return response.data.auction;
     } catch (error) {
-      return rejectWithValue(
-        error?.response?.data?.message ||
-          error?.response?.data?.error ||
-          "Failed to place bid!"
-      );
+      return rejectWithValue("Failed to place bid!");
     }
   }
 );
@@ -107,8 +103,6 @@ const auctionsSlice = createSlice({
       .addCase(auctionNow.rejected, (state, action) => {
         state.bidStatus = "failed";
         state.bidError = action.payload;
-        console.log(action.payload);
-
         showToast("error", action.payload);
       });
   },

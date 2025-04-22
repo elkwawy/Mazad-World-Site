@@ -24,7 +24,7 @@ export default function HomeSellers() {
     <div className="containerAK">
       <SectionTitle
         title={t("featured_sellers")}
-        viewAll={t("view_all_sellers")}
+        // viewAll={t("view_all_sellers")}
         to={"/sellers"}
       />
 
