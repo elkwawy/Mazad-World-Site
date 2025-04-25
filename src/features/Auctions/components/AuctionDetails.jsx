@@ -63,7 +63,11 @@ const AuctionDetails = () => {
   }
 
   if (singleStatus === "failed") {
-    return <p className="text-center text-red-600">{singleError}</p>;
+    return (
+      <div className="containerAK py-9">
+        <p className="text-center min-h-[75vh]  text-red-600">{singleError}</p>;
+      </div>
+    );
   }
 
   return (
