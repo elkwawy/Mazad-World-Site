@@ -47,7 +47,7 @@ const categoriesSlice = createSlice({
         state.status = "loading";
       })
       .addCase(fetchCategories.fulfilled, (state, action) => {
-        state.status = "fulfilled";
+        state.status = "succeeded";
         state.categories = action.payload;
       })
       .addCase(fetchCategories.rejected, (state, action) => {
@@ -58,7 +58,7 @@ const categoriesSlice = createSlice({
         state.statusPC = "loading";
       })
       .addCase(fetchProductsCategory.fulfilled, (state, action) => {
-        state.statusPC = "fulfilled";
+        state.statusPC = "succeeded";
         state.productsCategory = action.payload;
       })
       .addCase(fetchProductsCategory.rejected, (state, action) => {

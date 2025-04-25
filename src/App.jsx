@@ -14,7 +14,7 @@ import CategoriesPage from "@/features/categories/CategoriesPage";
 import AuctionsPage from "@/features/auctions/AuctionsPage";
 import NotFound from "@/staticPages/NotFound";
 import NewsDetails from "@/features/LatestNews/components/NewsDetails";
-import AboutUs from "@/staticPages/AboutUs";
+import AboutUs from "@/features/AboutUs/AboutUs";
 import DealDetails from "@/components/DealDetails";
 import IdentityVerification from "@/features/auth/pages/IdentityVerification";
 import { Toaster } from "react-hot-toast";

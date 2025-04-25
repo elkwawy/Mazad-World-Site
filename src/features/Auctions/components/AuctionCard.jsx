@@ -32,7 +32,7 @@ export default function AuctionCard({ auction }) {
         onClick={ handleShowDeal }
         className={`relative cursor-pointer`}
       >
-        <img src={images[0]} alt={title} className="w-full h-48 object-cover" />
+        <img src={images[0]} alt={title} className="w-full h-48 object-fill" />
         
         {/* عرض التوقيت المتبقي إذا كان المزاد شغال */}
         {isAuctionActive && (

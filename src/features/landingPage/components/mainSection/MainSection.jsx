@@ -7,7 +7,7 @@ const mainSection = () => {
 
   return (
     <div className="containerAK" dir={dir}>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 min-[950px]:grid-cols-2 gap-8">
         <AuctionsCarousel />
 
         <div className="grid grid-rows-2 gap-6">

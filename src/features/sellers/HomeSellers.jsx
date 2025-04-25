@@ -50,17 +50,20 @@ export default function HomeSellers() {
                 <div className="space-y-1">
                   <div className="flex items-center gap-2">
                     <h3 className="font-semibold">{seller.name}</h3>
-                    {seller.verified ? (
-                      <FiCheck
+                    {/*
+                      
+                      {seller.status ? (
+                        <FiCheck
                         className="text-green-500"
                         title={t("verified_seller")}
-                      />
-                    ) : (
-                      <FiXCircle
+                        />
+                      ) : (
+                        <FiXCircle
                         className="text-red-500"
                         title={t("unverified_seller")}
-                      />
-                    )}
+                        />
+                      )}
+                      */}
                   </div>
                   <div className="flex items-center gap-1 text-sm">
                     <FiStar className="text-yellow-400" />

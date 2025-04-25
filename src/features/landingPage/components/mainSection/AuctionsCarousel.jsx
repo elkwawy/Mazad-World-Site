@@ -17,13 +17,36 @@ import AuctionCardHome from "./AuctionCardHome";
 const AuctionsCarousel = () => {
   const { t, dir } = useLocalization();
   const dispatch = useDispatch();
-  const { auctions, status } = useSelector((state) => state.auctions);
+  const { auctions, status, error } = useSelector((state) => state.auctions);
 
   useEffect(() => {
     if (status === "idle") {
       dispatch(fetchAuctions());
     }
   }, [dispatch, status]);
+
+  // Error state
+  if (status === "failed") {
+    return (
+      <div className="text-center py-10 text-red-600 font-semibold">
+        {t("An error occurred while loading auctions")} 😓
+        <br />
+        <span className="text-sm text-gray-500">{error}</span>
+      </div>
+    );
+  }
+
+  // No data state
+  if (status === "succeeded" && auctions.length === 0) {
+    return (
+      <div className="text-center py-10 text-gray-500 font-medium">
+        {t("No auctions available at the moment")}
+        <div className="mt-4 text-3xl text-gray-400 flex justify-center">
+          <ImHammer2 />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <Swiper
@@ -70,5 +93,6 @@ const AuctionsCarousel = () => {
     </Swiper>
   );
 };
+
 
 export default AuctionsCarousel;

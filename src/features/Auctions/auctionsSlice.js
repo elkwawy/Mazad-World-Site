@@ -70,7 +70,7 @@ const auctionsSlice = createSlice({
         state.status = "loading";
       })
       .addCase(fetchAuctions.fulfilled, (state, action) => {
-        state.status = "fulfilled";
+        state.status = "succeeded";
         state.auctions = action.payload;
       })
       .addCase(fetchAuctions.rejected, (state, action) => {
@@ -83,7 +83,7 @@ const auctionsSlice = createSlice({
         state.singleStatus = "loading";
       })
       .addCase(showSingleAuction.fulfilled, (state, action) => {
-        state.singleStatus = "fulfilled";
+        state.singleStatus = "succeeded";
         state.singleAuction = action.payload;
       })
       .addCase(showSingleAuction.rejected, (state, action) => {
@@ -96,7 +96,7 @@ const auctionsSlice = createSlice({
         state.bidStatus = "loading";
       })
       .addCase(auctionNow.fulfilled, (state, action) => {
-        state.bidStatus = "fulfilled";
+        state.bidStatus = "succeeded";
         showToast("success", "Bid placed successfully!");
         state.singleAuction = action.payload;
       })

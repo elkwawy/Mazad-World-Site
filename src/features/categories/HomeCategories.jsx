@@ -6,24 +6,26 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import useLocalization from "@/hooks/useLocalization";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCategories } from "./categoriesSlice";
-import { useEffect } from "react";
 import "react-loading-skeleton/dist/skeleton.css";
 import { Link } from "react-router-dom";
 import CategoriesSkeleton from "./components/CategoriesSkeleton";
-
+import { CgMenuGridO } from "react-icons/cg";
 const HomeCategories = () => {
   const { t, dir } = useLocalization();
 
-  const dispatch = useDispatch();
   const { categories, status } = useSelector((state) => state.categories);
   console.log(categories);
 
-  // useEffect(() => {
-  //   if (status === "idle") {
-  //     dispatch(fetchCategories());
-  //   }
-  // }, [dispatch, status]);
+  if (status === "succeeded" && categories.length === 0) {
+    return (
+      <div className="text-center py-10 text-gray-500 font-medium">
+        No categories available at the moment
+        <div className="mt-4 text-3xl text-gray-400 flex justify-center">
+          <CgMenuGridO />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <Swiper
@@ -51,7 +53,7 @@ const HomeCategories = () => {
         : categories.slice(0, 5).map((category) => (
             <SwiperSlide
               key={category.id}
-              className="bg-gray-100 w-24 py-10 px-14 max-lg:px-7 max-sm:px-4 rounded-lg overflow-hidden"
+              className="bg-gray-100 w-24 py-10 px-14 max-lg:px-7 max-sm:px-4 rounded-lg "
             >
               <div className="flex justify-between items-center gap-2">
                 <div className="flex flex-col gap-5">
@@ -61,7 +63,7 @@ const HomeCategories = () => {
                   >
                     {t("all_categories")}
                   </Link>
-                  <h3 className="text-3xl font-bold max-w-[90px]">
+                  <h3 className="lg:text-3xl text-2xl font-bold max-w-[90px]">
                     {category.name}
                   </h3>
                   <Link
@@ -78,7 +80,7 @@ const HomeCategories = () => {
                     category.photo ||
                     "https://images.unsplash.com/photo-1555353540-64580b51c258?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNhcnN8ZW58MHx8MHx8fDA%3D"
                   }
-                  className="w-44 h-44 flex items-center justify-center object-cover bg-gray-200 rounded-2xl"
+                  className="w-[150px] h-[150px] flex items-center justify-center object-cover bg-gray-200 rounded-2xl"
                 />
               </div>
             </SwiperSlide>

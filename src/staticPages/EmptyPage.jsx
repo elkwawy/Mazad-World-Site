@@ -3,7 +3,7 @@ import { IoClose } from "react-icons/io5";
 const EmptyPage = ({ name }) => {
   const navigate = useNavigate();
   return (
-    <div className="col-span-full flex flex-col items-center justify-center h-[55vh] text-gray-600 py-10">
+    <div className="col-span-full flex flex-col items-center -mt-6 justify-center h-[89vh] text-gray-600">
       <IoClose className="w-20 h-20 text-gray-800" />
 
       <h2 className="text-2xl font-semibold mt-3">No {name} Available</h2>

@@ -25,7 +25,7 @@ const AuctionDetails = () => {
   } = useSelector((state) => state.auctions);
 
   useEffect(() => {
-      dispatch(showSingleAuction(auctionId));
+    dispatch(showSingleAuction(auctionId));
     // console.log(auctionData);
   }, [dispatch, auctionId]);
 
@@ -76,7 +76,7 @@ const AuctionDetails = () => {
               <img
                 src={mainImage}
                 alt="Main"
-                className="w-full h-[280px] object-cover rounded-lg shadow-md"
+                className="w-full h-[270px] object-fill rounded-lg shadow-md"
               />
             </div>
             <div className="w-1/4 flex flex-col gap-2">

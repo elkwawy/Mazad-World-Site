@@ -5,6 +5,7 @@ import auctionsSlice from "@/features/auctions/auctionsSlice";
 import faqsSlice from "@/features/faqs/faqsSlice";
 import sellersSlice from "@/features/sellers/sellersSlice";
 import latestNewsSlice from "@/features/LatestNews/latestNewsSlice";
+import customersSlice from "@/redux/slices/customersSlice";
 
 const store = configureStore({
   reducer: {
@@ -14,6 +15,7 @@ const store = configureStore({
     sellers: sellersSlice,
     latestNews: latestNewsSlice,
     faqs: faqsSlice,
+    customers: customersSlice,
   },
 });
 
