@@ -11,7 +11,6 @@ const AuctionModal = ({ isOpen, onClose, id, auctionData }) => {
   const [paymentMethod, setPaymentMethod] = useState("bank_transfer");
   const formRef = useRef(null);
 
-
   const validationSchema = Yup.object({
     name: Yup.string().required("Name is required"),
     email: Yup.string()
@@ -35,20 +34,17 @@ const AuctionModal = ({ isOpen, onClose, id, auctionData }) => {
     },
     validationSchema,
     onSubmit: async (values, { resetForm }) => {
-
-      if(values.bidValue <= auctionData.current_price){ 
+      if (values.bidValue <= auctionData.current_price) {
         showToast("error", "Bid value must be greater than current price");
         return;
       }
 
       setLoading(true);
 
-
       if (!formRef.current) return;
 
       // bank_transfer ده الفيزا
       // credit ده المحافظ زي فوادفون كاش
-      
 
       const formData = {
         name: values.name,
@@ -61,14 +57,15 @@ const AuctionModal = ({ isOpen, onClose, id, auctionData }) => {
         product_price: auctionData.starting_price,
       };
       console.log(formData);
-      
+
       try {
         const response = await axiosInstance.post("v1/bids", formData);
 
         // Step 4: Handle payment based on selected method
         if (paymentMethod === "bank_transfer") {
           // Redirect to bank_transfer payment link
-          window.location.href = auctionData.paymentLink;
+          window.open(auctionData.paymentLink, "_blank");
+          onClose();
         } else {
           // For credit payment, just close the modal (user will pay manually)
           onClose();
