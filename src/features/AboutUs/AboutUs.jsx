@@ -16,13 +16,10 @@ export default function AboutUs() {
         </div>
       </div>
 
-      {/* Stats Section */}
       <StatusAboutUs />
 
-      {/* Story Section */}
       <StoryAboutUs />
 
-      {/* Features Section */}
       <FeaturesAboutUs />
     </div>
   );

@@ -4,9 +4,6 @@ import Navbar from "@/layouts/Navbar";
 import LandingPage from "@/features/landingPage/LandingPage";
 import SignUp from "@/features/auth/pages/SignUp";
 import Login from "@/features/auth/pages/Login";
-import ResetPassword from "@/features/auth/pages/ResetPassword";
-import ForgetPassword from "@/features/auth/pages/ForgetPassword";
-import EmailVerification from "@/features/auth/pages/EmailVerification";
 import ContactUs from "@/features/contactUs/ContactUs";
 import Footer from "@/layouts/Footer";
 import CategoriesPage from "@/features/categories/CategoriesPage";
@@ -16,7 +13,6 @@ import NotFound from "@/staticPages/NotFound";
 import NewsDetails from "@/features/LatestNews/components/NewsDetails";
 import AboutUs from "@/features/AboutUs/AboutUs";
 import DealDetails from "@/components/DealDetails";
-import IdentityVerification from "@/features/auth/pages/IdentityVerification";
 import { Toaster } from "react-hot-toast";
 import AuctionDetails from "./features/auctions/components/AuctionDetails";
 import AuctionsCategory from "./features/categories/AuctionsCategory";
@@ -43,16 +39,6 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
-        <Route
-          path="/identityVerification"
-          element={<IdentityVerification />}
-        />
-        <Route path="/login/forgetPassword" element={<ForgetPassword />} />
-        <Route
-          path="/login/forgetPassword/ResetPassword"
-          element={<ResetPassword />}
-        />
-        <Route path="/EmailVerification" element={<EmailVerification />} />
         <Route path="/categories" element={<CategoriesPage />} />
         <Route path="/newsDetails/:id" element={<NewsDetails />} />
         <Route path="/deal/:id" element={<DealDetails />} />

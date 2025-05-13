@@ -1,6 +1,6 @@
 import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
 import useLocalization from "@/hooks/useLocalization";
-
+import ContactForm from "./components/ContactForm";
 export default function ContactUs() {
   const { t } = useLocalization();
 
@@ -13,52 +13,10 @@ export default function ContactUs() {
 
         <div className="grid md:grid-cols-2 gap-11">
           {/* Contact Form */}
-          <div className="bg-white p-8 rounded-lg shadow border border-gray-200">
-            <h2 className="text-2xl font-semibold mb-6">
-              {t("contact_us.send_message")}
-            </h2>
-            <form className="space-y-5">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  {t("contact_us.name")}
-                </label>
-                <input
-                  type="text"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
-                  placeholder={t("contact_us.name_placeholder")}
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  {t("contact_us.email")}
-                </label>
-                <input
-                  type="email"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
-                  placeholder={t("contact_us.email_placeholder")}
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  {t("contact_us.message")}
-                </label>
-                <textarea
-                  rows="4"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
-                  placeholder={t("contact_us.message_placeholder")}
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-secondary text-white py-3 rounded-lg hover:bg-secondary/90 transition-colors"
-              >
-                {t("contact_us.send_button")}
-              </button>
-            </form>
-          </div>
+          <ContactForm />
 
-          {/* Contact Information */}
           <div className="space-y-7">
+            {/* Contact Information */}
             <div className="bg-white p-8 rounded-lg shadow border border-gray-200">
               <h2 className="text-2xl font-semibold mb-6">
                 {t("contact_us.info_title")}
@@ -99,7 +57,7 @@ export default function ContactUs() {
                 </div>
               </div>
             </div>
-
+            {/* Business Hours */}
             <div className="bg-white p-8 rounded-lg shadow border border-gray-200">
               <h2 className="text-2xl font-semibold mb-6">
                 {t("contact_us.hours_title")}

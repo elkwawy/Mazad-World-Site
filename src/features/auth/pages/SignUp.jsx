@@ -36,7 +36,7 @@ function SignUp() {
   });
 
   return (
-    <>
+    <div className="h-[90vh]">
       <Navgit />
       <div className="max-w-3xl mx-auto flex items-center justify-center mt-2 mb-9">
         <div className="w-[90%] sm:w-[70%] rounded-lg border border-gray-200 shadow-2xl">
@@ -110,7 +110,7 @@ function SignUp() {
           </form>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
