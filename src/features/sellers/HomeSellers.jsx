@@ -79,7 +79,7 @@ export default function HomeSellers() {
                   <span className="text-gray-500">{t("status")}</span>
                   <span
                     className={`font-medium ${
-                      seller.status === 1 ? "text-green-500" : "text-red-500"
+                      seller.status === 1 ? "text-green-500" : "text-secondary"
                     }`}
                   >
                     {seller.status === 1 ? t("active") : t("inactive")}

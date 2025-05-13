@@ -47,7 +47,7 @@ function SignUp() {
             >
               Sign In
             </Link>
-            <button className="w-[50%] h-[60px] border-b-4 border-[#FA8232]">
+            <button className="w-[50%] h-[60px] border-b-4 border-secondary">
               Sign Up
             </button>
           </div>

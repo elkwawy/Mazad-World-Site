@@ -1,9 +1,7 @@
 import React, { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
 import { useDispatch } from "react-redux";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { auctionNow, showSingleAuction } from "../auctionsSlice";
 import { showToast } from "@/utils/showToast";
 import InputForm from "@/components/helpers/InputForm";
 import axiosInstance from "@/hooks/axiosInstance";
@@ -11,10 +9,8 @@ import axiosInstance from "@/hooks/axiosInstance";
 const AuctionModal = ({ isOpen, onClose, id, auctionData }) => {
   const [loading, setLoading] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState("bank_transfer");
-  const dispatch = useDispatch();
   const formRef = useRef(null);
 
-  // console.log(auctionData);
 
   const validationSchema = Yup.object({
     name: Yup.string().required("Name is required"),
@@ -39,7 +35,14 @@ const AuctionModal = ({ isOpen, onClose, id, auctionData }) => {
     },
     validationSchema,
     onSubmit: async (values, { resetForm }) => {
+
+      if(values.bidValue <= auctionData.current_price){ 
+        showToast("error", "Bid value must be greater than current price");
+        return;
+      }
+
       setLoading(true);
+
 
       if (!formRef.current) return;
 
@@ -89,8 +92,6 @@ const AuctionModal = ({ isOpen, onClose, id, auctionData }) => {
         //     publicKey: "PmARZnCEW1lngVqiK",
         //   }
         // );
-        // Step 3: Refresh auction data
-        // await dispatch(showSingleAuction(id)).unwrap();
       } catch (error) {
         console.error("Something went wrong:", error);
         showToast("error", "An error occurred. Please try again.");
@@ -189,7 +190,7 @@ const AuctionModal = ({ isOpen, onClose, id, auctionData }) => {
                 value="bank_transfer"
                 checked={paymentMethod === "bank_transfer"}
                 onChange={() => setPaymentMethod("bank_transfer")}
-                className="h-4 w-4 text-orange-500 focus:ring-orange-500"
+                className="h-4 w-4 text-primary focus:ring-secondary"
               />
               <label
                 htmlFor="bank_transfer_Payment"
@@ -238,7 +239,7 @@ const AuctionModal = ({ isOpen, onClose, id, auctionData }) => {
 
           <button
             type="submit"
-            className="bg-orange-500 text-white py-2 rounded-md hover:bg-orange-600 transition"
+            className="bg-primary text-white py-2 rounded-md hover:bg-secondary transition"
             disabled={loading}
           >
             {loading ? "Processing..." : "Auction Now"}

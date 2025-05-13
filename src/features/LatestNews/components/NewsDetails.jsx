@@ -34,9 +34,9 @@ const NewsDetails = () => {
       <div className="mt-8">
         <button
           onClick={() => window.history.back()}
-          className="px-6 py-2 bg-orange-500 text-white rounded-md shadow-md hover:bg-orange-600 transition-all"
+          className="px-6 py-2 bg-primary text-white rounded-md shadow-md hover:bg-secondary transition-all"
         >
-          🔙 Back
+          Back
         </button>
       </div>
     </div>

@@ -22,7 +22,7 @@ const Navgit = () => {
       <ol className="flex  containerAK">
         {/* Home link */}
         <li>
-          <Link to="/" className="text-sec-color text-lg hover:underline">
+          <Link to="/" className="text-secondary text-lg hover:underline">
             Home
           </Link>
         </li>
@@ -45,7 +45,7 @@ const Navgit = () => {
               ) : (
                 <Link
                   to={path}
-                  className="text-sec-color hover:underline text-lg "
+                  className="text-secondary hover:underline text-lg "
                 >
                   {breadcrumbMap[segment] || segment}
                 </Link>

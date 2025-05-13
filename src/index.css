@@ -4,14 +4,7 @@
 :root {
   --main-color: #1b6392;
   --bMC: #427ea6;
-
   --sec-color: #fa8232;
-
-  /* 
-  --main-color: #31111D;
-  --bMC: #5a2337;
-  --sec-color : #BE4646; 
-  */
 
   --hover-main-color: #411b29;
 
@@ -41,7 +34,7 @@ ul {
   width: 6px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: var(--sec-color);
+  background-color: var(--bMC);
 }
 ::-webkit-scrollbar-track {
   background-color: lightgray;
@@ -59,17 +52,12 @@ a {
 }
 
 @layer base {
-  :root {
-    --main-color: #4880ff;
-    --sec-color: #909090;
-    --hover-color: #f3f4f6;
-    --background-color: #f5f6fa;
-  }
+
   .trans {
     @apply transition-all duration-300;
   }
   .inputD {
-    @apply w-full h-[40px] px-3 text-sm rounded-md border focus:border-sec-color transition-all duration-300;
+    @apply w-full h-[40px] px-3 text-sm rounded-md border focus:border-secondary transition-all duration-300;
   }
   .errorD {
     @apply border-red-600 focus:border-red-600;
@@ -122,7 +110,7 @@ a {
 }
 
 .swiper-pagination-bullet-active {
-  background: var(--sec-color) !important;
+  background: var(--bMC) !important;
 }
 .swiper-button-next,
 .swiper-button-prev {

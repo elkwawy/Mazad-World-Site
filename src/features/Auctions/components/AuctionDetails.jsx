@@ -142,7 +142,7 @@ const AuctionDetails = () => {
             {isAuctionActive ? (
               <button
                 onClick={() => setShowModal(true)}
-                className="flex items-center gap-2 bg-orange-500 text-white px-4 py-2 rounded-md shadow-md hover:bg-orange-600 transition"
+                className="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-md shadow-md hover:bg-secondary transition"
               >
                 Auction Now <ImHammer2 />
               </button>

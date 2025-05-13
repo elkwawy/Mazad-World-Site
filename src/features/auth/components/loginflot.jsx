@@ -103,7 +103,7 @@ const LoginFlot = () => {
           <Link to="/SignUp">
             <button
               onClick={toggleMenu}
-              className="bg-white trans hover:border-[#FA8232] rounded-md mt-3 h-[48px] max-md:w-[277px] w-[360px] flex justify-center items-center gap-2 text-sm font-semibold text-[#FA8232] border-[#FFE7D6] border shadow-[#FFE7D6] "
+              className="bg-white trans border-secondary hover:border-primary rounded-md mt-3 h-[48px] max-md:w-[277px] w-[360px] flex justify-center items-center gap-2 text-sm font-semibold text-secondary border shadow-[#FFE7D6] "
             >
               CREATE ACCOUNT
             </button>

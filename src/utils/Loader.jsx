@@ -1,8 +1,9 @@
 import { memo } from "react"
+import LoaderW from "@/assets/loaderW.svg"
 
-const Loader = memo(({width}) => {
+const Loader = memo(({className}) => {
     return (
-        <img draggable={false} src="/src/assets/loader.svg" alt="Loading..." style={{width: width ? width : "40px"}} />
+        <img draggable={false} src={LoaderW} alt="Loading..." className={className} />
     )
 })
 
